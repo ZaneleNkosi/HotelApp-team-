@@ -1,0 +1,35 @@
+<ion-content>
+
+  <div class="container">
+    <div class="header">
+      <div class="profile">
+          <div class="name">
+              <p><span>Welcome</span> {{displayProfile.firstname}}</p>
+            </div>
+            <div class="propic" (click)=" presentPopover(myEvent)">
+              <img src="{{displayProfile.image}}">
+            </div>
+      </div>
+     
+      <div class="search">
+          <ion-item>
+            <ion-input type="text" placeholder="Search"></ion-input>
+          </ion-item>
+        </div>
+    </div>
+
+  <!--rooms-->
+    <div class="body" >
+        <div class="room" *ngFor="let n of rooms" (click)="gotoroom(n)">
+            <div class="pic" >
+              <img src="{{n.Image}}" >
+            </div>
+            <div class="desc">
+                <p>{{n.Name}}</p>
+            </div>
+          </div>
+    </div>
+  
+    
+  </div>
+</ion-content>

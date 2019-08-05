@@ -1,0 +1,52 @@
+<ion-content>
+
+
+  <div class="container">
+    <div class="">
+
+    
+    <div class="top">
+     
+      <div class="upload">
+          <div class="home" (click)="gotolist()">
+              <ion-icon name="home"></ion-icon>
+          </div>
+        <img src="{{displayProfile.image}}">
+      </div>
+
+      <div class="upload2">
+          <ion-icon name="create"></ion-icon>
+        <img src="{{displayProfile.image}}">
+      </div>
+    </div>
+
+    <div class="details">
+      <div class="view">
+        <div class="name">
+          <p id="fullname">{{displayProfile.firstname}}</p>
+          <p id="username">{{displayProfile.Bio}}</p>
+        </div>
+        <div class="other">
+            <p id="number">{{displayProfile.phone}}</p>
+            <p id="email">{{displayProfile.email}}</p>
+          </div>
+      </div>
+
+      <p class="bhist">Booking History</p>
+      <div class="history">
+       
+          <div class="roomname">
+            <p class="rname">{{displayBooking.roomName}}</p>
+          </div>
+
+          <div class="extras">
+              <p>Check-In: {{displayBooking.date1}} &nbsp; Check-Out {{displayBooking.date2}}</p>
+              <p>Days at the hotel: {{displayBooking.nodays}}</p>
+            </div>
+        </div>
+      
+    </div>
+  </div>
+  </div>
+
+</ion-content>

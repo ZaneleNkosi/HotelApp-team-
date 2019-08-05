@@ -1,0 +1,46 @@
+
+<ion-content padding>
+    <p>Create profile</p>
+    <div class="container">
+      <div class="propic" (click)="selectImage()">
+          <img src="{{profileImage}}">
+      </div>
+      
+         
+         
+          <!-- <button ion-button (click)="selectImage()" *ngIf="!profileImage">Profile Image</button> -->
+          <!-- <button ion-button color="danger" (click)="selectImage()" *ngIf="profileImage">Choose another</button> -->
+    
+          <ion-item>
+            <ion-label stacked>Full Name</ion-label>
+            <ion-input type="text" [(ngModel)]="profile.firstname"></ion-input>
+          </ion-item>
+    
+          <ion-item>
+            <ion-label stacked>Email</ion-label>
+            <ion-input type="text" [(ngModel)]="profile.email"></ion-input>
+          </ion-item>
+    
+          <ion-item>
+            <ion-label stacked>Phone</ion-label>
+            <ion-input type="tel" [(ngModel)]="profile.phone"></ion-input>
+          </ion-item>
+
+          
+          <ion-item>
+              <ion-label stacked>Bio</ion-label>
+              <ion-input type="text" [(ngModel)]="profile.Bio"></ion-input>
+            </ion-item>
+       
+
+          <button ion-button color="dark" full (click)="createProfile()">Save</button>
+        </div>
+    
+        <!-- <div class="btns" *ngIf="showComp">
+          <button ion-button clear block (click)="showProfile()">Create Profile</button>
+          <button ion-button clear block (click)="viewProfile()">View Profile</button>
+    
+        </div> -->
+    
+      
+</ion-content>

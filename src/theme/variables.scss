@@ -36,7 +36,7 @@ $app-direction: ltr;
 $colors: (
   primary:    #488aff,
   secondary:  #32db64,
-  danger:     #f53d3d,
+  danger:     hsl(4, 100%, 66%),
   light:      #f4f4f4,
   dark:       #222
 );
@@ -86,3 +86,8 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+
+$popover-md-width: 320px;
+$popover-ios-width: 320px;
+$popover-wp-width: 320px;

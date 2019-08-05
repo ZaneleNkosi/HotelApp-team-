@@ -1,0 +1,109 @@
+popover3 {
+  .content {
+    background: linear-gradient(rgba(95, 94, 94, 0.555)), url('../../assets/imgs/book.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+  }
+
+  .back {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+
+    .icon {
+      color: rgb(170, 135, 60);
+      font-size: 30px;
+    }
+  }
+
+  .container {
+    display: grid;
+    align-content: center;
+  }
+
+  #icon {
+    position: relative;
+    left: 10%;
+    width: 200px;
+
+    h1 {
+      text-align: center;
+      font-family: 'Jura';
+      font-size: 40px;
+      background: transparent;
+      color: white;
+      padding: 20px;
+      font-weight: bold;
+      font-size: 55px;
+    }
+  }
+
+  .npts {
+    align-items: center;
+    width: 100%;
+    background: transparent;
+
+    .label {
+      color: white;
+      font-family: 'Jura';
+    }
+
+    .input {
+      color: white;
+    }
+
+    .item {
+      background: transparent;
+      font-family: 'Jura';
+    }
+  }
+
+  .close {
+    text-align: center;
+    margin-bottom: 10px;
+
+    .button {
+      height: 35px;
+      width: 20px;
+      color: white;
+      border: 2px solid whitesmoke;
+      border-radius: 50%;
+      font-family: 'Jura';
+    }
+  }
+
+
+  .btn {
+    .btns {
+      width: 100%;
+    }
+  }
+
+  #login {
+    background: rgba(8, 8, 8, 0.377);
+    color: whitesmoke;
+    border-radius: 20px;
+    width: 100%;
+    font-family: 'Jura';
+  }
+
+  #register {
+    color: black;
+    font-family: 'Jura';
+  }
+
+}
+p {
+  font-family: 'Jura';
+  span{
+    color: blue;
+  }
+ }
+
+.error {
+  >div {
+    background-color: rgb(22, 154, 216) !important;
+  }
+}

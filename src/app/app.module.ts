@@ -6,25 +6,60 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { ListPage } from '../pages/list/list';
+import { BookingPage } from '../pages/booking/booking';
+import { PaymentPage } from '../pages/payment/payment';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { FIREBASE_INFO } from './firebase.info';
+import { PopoverComponent } from '../components/popover/popover';
+import { Popover3Component } from '../components/popover3/popover3';
+import { Popover4Component } from '../components/popover4/popover4';
+import { InformationProvider } from '../providers/information/information';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+import { Camera } from "@ionic-native/camera";
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    ListPage,
+    BookingPage,
+    PaymentPage,
+    PopoverComponent,
+    Popover3Component,
+    Popover4Component
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(FIREBASE_INFO),
+    IonicModule.forRoot(MyApp),
+    AngularFireDatabaseModule,
+    HttpClientModule,
+    HttpModule
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    ListPage,
+    BookingPage,
+    PaymentPage,
+    PopoverComponent,
+    Popover3Component,
+    Popover4Component
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    InformationProvider,
+    Camera
   ]
 })
-export class AppModule {}
+export class AppModule { }

@@ -1,0 +1,47 @@
+page-payment {
+
+  .book {
+    p {
+      color: rgb(170, 135, 60);
+      text-align: center;
+      font-family: 'Jura';
+      font-size: 40px;
+    }
+  }
+
+  .item {
+    background: transparent;
+    color: rgb(10, 10, 10);
+    font-family: 'Jura';
+  }
+
+  .btn {
+    position: relative;
+    left: 10%;
+  }
+
+  .cards {
+    position: relative;
+    left: 20%;
+    display: flex;
+    flex-flow: row;
+
+    i {
+      font-size: 40px;
+    }
+  }
+
+  .button {
+    margin-top: 20px;
+    width: 80%;
+  
+  }
+
+  .date {
+    color: rgba(12, 12, 12, 0.575);
+  }
+
+  .form {
+    margin-top: 30%;
+  }
+}

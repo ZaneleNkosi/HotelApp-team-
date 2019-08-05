@@ -1,0 +1,167 @@
+page-view {
+  .container {
+    display: grid;
+    // flex-flow: column;
+    // justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .top {
+    width: 100%;
+    height: 470px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .home {
+      position: absolute;
+      z-index: 3;
+      padding: 10px;
+
+      .icon {
+        color: rgb(255, 255, 255);
+        font-size: 25px;
+      }
+    }
+
+    .roomId {
+      display: flex;
+      flex-flow: column;
+      position: absolute;
+      top: 100px;
+      left: 100px;
+      z-index: 5;
+      text-align: center;
+      color: white;
+      -webkit-text-stroke: 1px black;
+
+      .name {
+        font-family: 'Ubuntu';
+        font-size: 50px;
+      }
+
+      .type {
+        margin: -60px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .desc {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .feat {
+    font-size: 20px;
+
+  }
+
+  #feat {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+
+    p {
+      background: rgba(163, 112, 16, 0.589);
+      border-radius: 20px;
+      margin: 10px;
+      text-align: center;
+      color: white;
+      padding: 5px;
+    }
+  }
+
+  .btn {
+    width: 90%;
+    align-content: center;
+    position: relative;
+    left: 20px;
+
+  }
+
+  .plus {
+    border-radius: 50%;
+  }
+
+  .fab {
+   button{
+     background: white;
+     color: black;
+   }
+  }
+
+  .userform{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    bottom: 10px;
+    right: 10px;
+    z-index: 51;
+    width: 70px;
+    height: 70px;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    transition: 0.3s;
+    padding: 10px;
+    border-radius: 200px;
+    text-align: center;
+    background: white;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px #18181852;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 200px;
+    }
+    input{
+      width: 90%;
+      border: none;
+      padding: 5px;
+      border-radius: 5px;
+      margin: 5px 0px;
+    }
+    select{
+      width: 90%;
+      border: none;
+      padding: 5px;
+      border-radius: 5px;
+      margin: 5px 0px;
+    }
+    textarea{
+      width: 90%;
+      height: 90px;
+      border: none;
+      border-radius: 5px;
+      padding: 5px;
+    }
+    button{
+      width: 90%;
+      padding: 5px;
+      border: none;
+      background: #223756;
+      color: white;
+      border-radius: 5px;
+    }
+    .controls {
+      display: none;
+    }
+  }
+  .userform:hover{
+    border-radius: 10px;
+    width: auto;
+    height: auto;
+    background: rgba(165, 121, 50, 0.514);
+  }
+  .userform:hover .controls{
+    display: block;
+  }
+
+}

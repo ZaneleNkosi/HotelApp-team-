@@ -1,0 +1,44 @@
+page-modal {
+
+  .confirm {
+    display: flex;
+    flex-flow: column;
+
+  }
+
+  .text {
+    text-align: center;
+    font-family: 'Jura';
+    font-size: 20px;
+    color: rgb(163, 112, 16);
+    position: relative;
+    top: 20px;
+  }
+
+  .details {
+    position: relative;
+    top: 50px;
+    align-items: flex-start;
+    font-family: 'Jura';
+    font-size: 20px;
+  }
+
+  .btn {
+    position: relative;
+    left: 10%;
+    top: 20px;
+    align-items: center;
+
+    button {
+      width: 80%;
+      align-items: center;
+      color: white;
+  
+    }
+  }
+
+  span {
+    font-weight: bold;
+    color: black;
+  }
+}

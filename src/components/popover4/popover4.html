@@ -1,0 +1,35 @@
+<!-- Generated template for the Popover4Component component -->
+<ion-content>
+    <div class="container">
+      <div class="header">
+          <div class="image">
+              <h1>SIGN <br>UP</h1>
+            </div>
+      </div>
+  
+  <div class="npts">
+      <ion-item>
+          <ion-label floating>Email</ion-label>
+          <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+          </ion-item>
+  
+         
+        </div>
+        </div>
+          <button ion-button full (click)="register(user)" id="reg">Sign Up</button>
+          <p>Already have an account? <span (click)="presentPopover3(myEvent)">Sign in</span></p>
+  
+          <div class="close">
+              <ion-buttons>
+                <button ion-button clear (click)="close()">
+                  X
+                </button>
+              </ion-buttons>
+            </div>
+  
+        </ion-content>

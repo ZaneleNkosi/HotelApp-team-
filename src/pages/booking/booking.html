@@ -1,0 +1,54 @@
+
+<ion-content>
+
+  <div class="book">
+<p>Booking Details</p>
+  </div>
+  <div class="inputs">
+    <ion-item>
+      <ion-label stacked>Full Name</ion-label>
+      <ion-input type="text" [(ngModel)]="bookings.name">{{displayProfile.firstname}}</ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Email</ion-label>
+      <ion-input type="email" [(ngModel)]="bookings.email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Phone</ion-label>
+      <ion-input type="tel" [(ngModel)]="bookings.phone">{{displayProfile.phone}}</ion-input>
+    </ion-item>
+
+    <div class="dates">
+      <ion-item>
+        <ion-label stacked>Check-In</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="bookings.date1"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Check-Out</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="bookings.date2"></ion-datetime>
+      </ion-item>
+    </div>
+
+    <div class="guests">
+      <ion-item>
+        <ion-label stacked>Adults</ion-label>
+        <ion-input type="number" placeholder="0" [(ngModel)]="bookings.adults"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Children</ion-label>
+        <ion-input type="number" placeholder="0" [(ngModel)]="bookings.children"></ion-input>
+      </ion-item>
+    </div>
+    <ion-item *ngIf="roomDetails.Name">
+        <ion-label stacked>Room Name</ion-label>
+        <ion-input type="text" [(ngModel)]="bookings.roomName">{{roomDetails.Name}}</ion-input>
+      </ion-item>
+    <div class="btn">
+      <button ion-button full color="dark" (click)="createBooking()">Continue</button>
+    </div>
+
+  </div>
+</ion-content>
