@@ -2,43 +2,41 @@
   <div class="container">
 
     <div class="book">
-      <p>Payment Details</p>
+      <p>Payment <br> Details</p>
     </div>
 
-    <div class="form">
-      <div class="cards">
-        <i class="fab fa-cc-visa fa-3x m-2"></i>
-        <i class="fab fa-cc-mastercard fa-3x m-2"></i>
-        <i class="fab fa-cc-paypal fa-3x m-2"></i>
-        <i class="fab fa-cc-amex fa-3x m-2"></i>
-      </div>
+    <div class="cards">
+      <i class="fab fa-cc-visa fa-3x m-2"></i>
+      <i class="fab fa-cc-mastercard fa-3x m-2"></i>
+      <i class="fab fa-cc-amex fa-3x m-2"></i>
 
-      <div class="input">
-          <ion-item>
-              <ion-label stacked>Name on Card</ion-label>
-              <ion-input type="text" [(ngModel)]="payments.name"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label stacked> Your 16 digit Card Number</ion-label>
-              <ion-input type="number" [(ngModel)]="payments.account"></ion-input>
-            </ion-item>
-            <div class="dates">
-              <ion-item>
-                <ion-label stacked>Expiry Date</ion-label>
-                <ion-input type="text" [(ngModel)]="payments.expiry"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label stacked>CVV</ion-label>
-                <ion-input type="number" [(ngModel)]="payments.cvv"></ion-input>
-              </ion-item>
-      </div>
+    </div>
+    <div class="info">
+      <ion-item>
+        <ion-label stacked>Name on Card</ion-label>
+        <ion-input type="text" [(ngModel)]="payments.name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked> Your 16 digit Card Number</ion-label>
+        <ion-input type="number" [(ngModel)]="payments.account"></ion-input>
+      </ion-item>
 
-      
-      </div>
-
-      <div class="btn">
-        <button ion-button full color="dark" (click)="createPayment()">Done</button>
+      <div class="dates">
+        <ion-item>
+          <ion-label stacked>Expiry Date</ion-label>
+          <ion-input type="text" [(ngModel)]="payments.expiry"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>CVV</ion-label>
+          <ion-input type="number" [(ngModel)]="payments.cvv"></ion-input>
+        </ion-item>
       </div>
     </div>
+
+
+    <div class="btn">
+      <button ion-button full color="dark" (click)="createPayment()">Done</button>
+    </div>
+
   </div>
 </ion-content>
