@@ -1,9 +1,12 @@
+import { ResetpasswordPage } from './../pages/resetpassword/resetpassword';
+import { RegisterPage } from './../pages/register/register';
+import { LoginPage } from './../pages/login/login';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
@@ -21,6 +24,8 @@ import { InformationProvider } from '../providers/information/information';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { Camera } from "@ionic-native/camera";
+import { AuthProvider } from '../providers/auth/auth';
+
 
 @NgModule({
   declarations: [
@@ -29,6 +34,9 @@ import { Camera } from "@ionic-native/camera";
     ListPage,
     BookingPage,
     PaymentPage,
+    ResetpasswordPage,
+    RegisterPage,
+    LoginPage,
     PopoverComponent,
     Popover3Component,
     Popover4Component
@@ -40,7 +48,9 @@ import { Camera } from "@ionic-native/camera";
     IonicModule.forRoot(MyApp),
     AngularFireDatabaseModule,
     HttpClientModule,
-    HttpModule
+    HttpModule,
+    FormsModule,
+    ReactiveFormsModule,
 
   ],
   bootstrap: [IonicApp],
@@ -59,7 +69,8 @@ import { Camera } from "@ionic-native/camera";
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     InformationProvider,
-    Camera
+    Camera,
+    AuthProvider
   ]
 })
 export class AppModule { }
