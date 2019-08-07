@@ -1,47 +1,29 @@
 page-payment {
 
-  .container {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
+.container{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards{
+  display: flex;
+  flex-flow: row;
+  i{
+    margin: 5px;
+    font-size: 40px;
   }
+}
 
-  .book {
-    text-align: center;
-    font-size: 45px;
-    color: rgb(163, 112, 16);
-
-  }
-
-  .cards {
+.inputs{
+  display: flex;
+  flex-flow: column;
+  width: 90%;
+  .dates{
     display: flex;
     flex-flow: row;
-
-    i {
-      font-size: 40px;
-      margin: 5px;
-    }
   }
-
-  .info {
-    display: flex;
-    flex-flow: column;
-    width: 100%;
-    position: relative;
-    top: 30%;
-
-    .dates {
-      display: flex;
-      flex-flow: row;
-    }
-  }
-
-.btn{
-  width: 80%;
-  position: relative;
-  top: 15%;
-  left: 10%;
 }
 
 }

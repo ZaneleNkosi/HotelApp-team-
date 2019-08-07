@@ -1,8 +1,9 @@
-
 <ion-content>
+  <div class="container">
 
   <div class="book">
-<p>Booking Details</p>
+    <img src="../../assets/imgs/UzuriLogo.PNG">
+    <p>Booking  Details</p>
   </div>
   <div class="inputs">
     <ion-item>
@@ -43,12 +44,13 @@
       </ion-item>
     </div>
     <ion-item *ngIf="roomDetails.Name">
-        <ion-label stacked>Room Name</ion-label>
-        <ion-input type="text" [(ngModel)]="bookings.roomName">{{roomDetails.Name}}</ion-input>
-      </ion-item>
+      <ion-label stacked>Room Name</ion-label>
+      <ion-input type="text" [(ngModel)]="bookings.roomName">{{roomDetails.Name}}</ion-input>
+    </ion-item>
     <div class="btn">
       <button ion-button full color="dark" (click)="createBooking()">Continue</button>
     </div>
 
   </div>
+</div>
 </ion-content>
