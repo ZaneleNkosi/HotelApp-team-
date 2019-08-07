@@ -37,12 +37,14 @@ export class ListPage {
     });
   }
 
+  gotoProfile(){
+    this.navCtrl.push('ProfilePage')
+  }
 
   getRooms() {
     this.db.collection('hotel').doc('aDJnBKRlpH482p3HwMlM').collection('rooms').get().then(room => {
       room.forEach(doc => {
         this.rooms.push(doc.data());
-
       })
       console.log(this.rooms);
     })

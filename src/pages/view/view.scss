@@ -24,48 +24,57 @@ page-view {
 
       .icon {
         color: rgb(255, 255, 255);
-        font-size: 25px;
+        font-size: 35px;
       }
     }
 
     .roomId {
       display: flex;
       flex-flow: column;
-      position: absolute;
-      top: 100px;
-      left: 100px;
+      justify-content: center;
+      align-items: center;
       z-index: 5;
+      position: relative;
+      bottom: 75%;
       text-align: center;
       color: white;
       -webkit-text-stroke: 1px black;
 
       .name {
-        font-family: 'Ubuntu';
+        font-family: 'Teko';
         font-size: 50px;
       }
 
       .type {
         margin: -60px;
         font-size: 20px;
+        font-family: 'Abel';
         font-weight: bold;
       }
     }
   }
 
   .desc {
+
     padding: 10px;
     font-size: 12px;
+    font-family: 'Abel';
+
   }
 
   .feat {
-    font-size: 20px;
+
+    font-size: 25px;
+    font-family: 'Abel';
 
   }
 
   #feat {
+
     display: flex;
     flex-wrap: wrap;
     padding: 10px;
+    font-size: 15px;
 
     p {
       background: rgba(163, 112, 16, 0.589);
@@ -73,6 +82,7 @@ page-view {
       margin: 10px;
       text-align: center;
       color: white;
+      font-family: 'Dosis';
       padding: 5px;
     }
   }
@@ -82,86 +92,96 @@ page-view {
     align-content: center;
     position: relative;
     left: 20px;
-
+    position: absolute;
+    bottom: 0;
+    font-family: 'Abel';
   }
 
   .plus {
     border-radius: 50%;
   }
 
-  .fab {
-   button{
-     background: white;
-     color: black;
-   }
-  }
+  // .fab {
+  //   button {
+  //     background: white;
+  //     color: black;
+  //   }
+  // }
 
-  .userform{
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    bottom: 10px;
-    right: 10px;
-    z-index: 51;
-    width: 70px;
-    height: 70px;
-    display: grid;
-    align-items: center;
-    text-align: center;
-    transition: 0.3s;
-    padding: 10px;
-    border-radius: 200px;
-    text-align: center;
-    background: white;
-    overflow: hidden;
-    box-shadow: 0px 0px 10px #18181852;
-    img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 200px;
-    }
-    input{
-      width: 90%;
-      border: none;
-      padding: 5px;
-      border-radius: 5px;
-      margin: 5px 0px;
-    }
-    select{
-      width: 90%;
-      border: none;
-      padding: 5px;
-      border-radius: 5px;
-      margin: 5px 0px;
-    }
-    textarea{
-      width: 90%;
-      height: 90px;
-      border: none;
-      border-radius: 5px;
-      padding: 5px;
-    }
-    button{
-      width: 90%;
-      padding: 5px;
-      border: none;
-      background: #223756;
-      color: white;
-      border-radius: 5px;
-    }
-    .controls {
-      display: none;
-    }
-  }
-  .userform:hover{
-    border-radius: 10px;
-    width: auto;
-    height: auto;
-    background: rgba(165, 121, 50, 0.514);
-  }
-  .userform:hover .controls{
-    display: block;
-  }
+  // .userform {
+  //   position: fixed;
+  //   bottom: 10px;
+  //   right: 10px;
+  //   bottom: 10px;
+  //   right: 10px;
+  //   z-index: 51;
+  //   width: 70px;
+  //   height: 70px;
+  //   display: grid;
+  //   align-items: center;
+  //   text-align: center;
+  //   transition: 0.3s;
+  //   padding: 10px;
+  //   border-radius: 200px;
+  //   text-align: center;
+  //   background: white;
+  //   overflow: hidden;
+  //   box-shadow: 0px 0px 10px #18181852;
+
+  //   img {
+  //     width: 100%;
+  //     height: 100%;
+  //     object-fit: cover;
+  //     border-radius: 200px;
+  //   }
+
+  //   input {
+  //     width: 90%;
+  //     border: none;
+  //     padding: 5px;
+  //     border-radius: 5px;
+  //     margin: 5px 0px;
+  //   }
+
+  //   select {
+  //     width: 90%;
+  //     border: none;
+  //     padding: 5px;
+  //     border-radius: 5px;
+  //     margin: 5px 0px;
+  //   }
+
+  //   textarea {
+  //     width: 90%;
+  //     height: 90px;
+  //     border: none;
+  //     border-radius: 5px;
+  //     padding: 5px;
+  //   }
+
+  //   button {
+  //     width: 90%;
+  //     padding: 5px;
+  //     border: none;
+  //     background: #223756;
+  //     color: white;
+  //     border-radius: 5px;
+  //   }
+
+  //   .controls {
+  //     display: none;
+  //   }
+  // }
+
+  // .userform:hover {
+  //   border-radius: 10px;
+  //   width: auto;
+  //   height: auto;
+  //   background: rgba(165, 121, 50, 0.514);
+  // }
+
+  // .userform:hover .controls {
+  //   display: block;
+  // }
 
 }

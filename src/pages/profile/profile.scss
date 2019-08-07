@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Teko|Abel|Anton|Dosis|Oxygen|Jura|Pacifico|Righteous|Roboto+Condensed|Ubuntu|Open+Sans+Condensed');
+
 page-profile {
 
   .container {
@@ -5,6 +7,7 @@ page-profile {
     flex-flow: column;
     justify-content: center;
     align-items: center;
+
   }
 
   .top {
@@ -12,17 +15,22 @@ page-profile {
     background: black;
     height: 400px;
     width: 100%;
+
     .upload {
       height: 100%;
       width: 100%;
       object-fit: cover;
 
-      .home {
-        z-index: 3;
+      #home {
+        z-index: 5;
         position: absolute;
-        color: rgba(255, 255, 255, 0.678);
-        font-size: 20px;
+        color: rgba(255, 255, 255, 0.774);
+        font-size: 25px;
         padding: 10px;
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+     
       }
 
       img {
@@ -32,37 +40,24 @@ page-profile {
         width: 100%;
         object-fit: cover;
         opacity: 0.5;
+     
       }
     }
 
     .upload2 {
       z-index: 3;
-      position: absolute;
-      bottom: 150px;
-      left: 80px;
       // border: 5px solid rgba(255, 255, 255, 0.466);
       // border-radius: 50%;
       display: flex;
       flex-flow: row;
-
-      .icon {
-        border: 2px solid rgba(255, 255, 255, 0.582);
-        height: 45px;
-        width: 45px;
-        padding: 5px;
-        border-radius: 50%;
-        text-align: center;
-        position: relative;
-        left: 30px;
-        top: 20px;
-        font-size: 20px;
-        color: white;
-        background: rgba(216, 150, 8, 0.603);
-      }
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      bottom: 95%;
 
       img {
-        height: 200px;
-        width: 200px;
+        height: 250px;
+        width: 250px;
         border-radius: 50%;
         border: 5px solid rgba(255, 255, 255, 0.466);
         border-radius: 50%;
@@ -87,12 +82,14 @@ page-profile {
       #fullname {
         color: white;
         font-size: 30px;
+        font-family: 'Dosis';
       }
 
       #username {
         color: white;
-        font-size: 10px;
+        font-size: 15px;
         margin: 0;
+        font-family: 'Dosis';
       }
     }
 
@@ -102,6 +99,7 @@ page-profile {
       justify-content: space-between;
       margin: 0px 10px;
       color: white;
+      font-family: 'Dosis';
     }
   }
 
@@ -115,6 +113,8 @@ page-profile {
 
 
   .body {
+    font-family: 'Dosis';
+
     .history {
       display: flex;
       flex-flow: row;

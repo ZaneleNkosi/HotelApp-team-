@@ -4,59 +4,60 @@
   <div class="container">
     <div class="">
 
-    
-    <div class="top">
-     
-      <div class="upload">
-        
-          <div class="home" (click)="gotolist()">
 
-            <ion-icon name="arrow-back"></ion-icon>
+      <div class="top">
 
+        <div class="upload">
+          <div id="home" (click)="gotolist()">
+
+            <div class="back">
+                <ion-icon name="arrow-back"></ion-icon>
+            </div>
+
+            <div class="back">
+                <ion-icon name="settings"></ion-icon>
+            </div>
+           
           </div>
-        <img src="{{displayProfile.image}}">
-      </div>
-
-      <div class="upload2">
-          <ion-icon name="create"></ion-icon>
-        <img src="{{displayProfile.image}}">
-      </div>
-    </div>
-
-    <div class="details">
-      <div class="view">
-        <div class="name">
-          <p id="fullname">{{displayProfile.firstname}}</p>
-          <p id="username">{{displayProfile.Bio}}</p>
+          <img src="{{displayProfile.image}}">
         </div>
-        <div class="other">
+
+        <div class="upload2">
+            <img src="{{displayProfile.image}}">
+        </div>
+      </div>
+
+      <div class="details">
+        <div class="view">
+          <div class="name">
+            <p id="fullname">{{displayProfile.firstname}}</p>
+            <p id="username">{{displayProfile.Bio}}</p>
+          </div>
+          <div class="other">
             <p id="number">{{displayProfile.phone}}</p>
             <p id="email">{{displayProfile.email}}</p>
           </div>
-      </div>
-    
+        </div>
 
-      <p class="bhist">Booking History</p>
-      <div class="body">
+        <p class="bhist">Booking History</p>
+        <div class="body">
           <div class="book" *ngIf="showComp">
-              <p>YOU DO NOT HAVE <br> ANY BOOKINGS YET</p>
-            </div>
-      <div class="history" *ngFor = "let n of displayBooking">
-
-         
-       
-          <div class="roomname">
-            <p class="rname">{{n.roomName}}</p>
+            <p>YOU DO NOT HAVE <br> ANY BOOKINGS YET</p>
           </div>
+          <div class="history" *ngFor="let n of displayBooking">
 
-          <div class="extras">
-              <p>Check-In: {{n.date1}} &nbsp; Check-Out {{n.date2}}</p>
+            <div class="roomname">
+              <p class="rname">{{n.roomName}}</p>
+            </div>
+            <div class="extras">
+              <p>Check-In: {{n.date1}} <br> Check-Out: {{n.date2}}</p>
               <p>Days at the hotel: {{n.nodays}}</p>
             </div>
+            <hr>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
 
 </ion-content>
