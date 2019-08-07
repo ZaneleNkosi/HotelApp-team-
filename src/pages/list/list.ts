@@ -1,3 +1,4 @@
+import { Popover3Component } from './../../components/popover3/popover3';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController, Slides, AlertController, LoadingController } from 'ionic-angular';
 import { PopoverComponent } from '../../components/popover/popover';
@@ -87,5 +88,8 @@ export class ListPage {
       load.dismiss();
     })
 
+  }
+  logout(){
+    this.navCtrl.push(Popover3Component)
   }
 }

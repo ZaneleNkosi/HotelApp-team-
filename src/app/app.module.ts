@@ -1,3 +1,4 @@
+import { ResetComponent } from './../components/reset/reset';
 import { ResetpasswordPage } from './../pages/resetpassword/resetpassword';
 import { RegisterPage } from './../pages/register/register';
 import { LoginPage } from './../pages/login/login';
@@ -39,7 +40,8 @@ import { AuthProvider } from '../providers/auth/auth';
     LoginPage,
     PopoverComponent,
     Popover3Component,
-    Popover4Component
+    Popover4Component,
+    ResetComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +64,8 @@ import { AuthProvider } from '../providers/auth/auth';
     PaymentPage,
     PopoverComponent,
     Popover3Component,
-    Popover4Component
+    Popover4Component,
+    ResetComponent
   ],
   providers: [
     StatusBar,

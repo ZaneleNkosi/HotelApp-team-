@@ -18,6 +18,11 @@
         </div>
     </div>
 
+    <ion-buttons>
+      <button ion-button full clear (click)="logout() ">
+        Sign Out
+      </button>
+    </ion-buttons>
   <!--rooms-->
     <div class="body" >
         <div class="room" *ngFor="let n of rooms" (click)="gotoroom(n)">
@@ -32,4 +37,5 @@
   
     
   </div>
+
 </ion-content>
