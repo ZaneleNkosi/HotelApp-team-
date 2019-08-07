@@ -4,6 +4,7 @@ import { AuthProvider } from '../providers/auth/auth';
 
 
 export class EmailValidator {
+    navCtrl: any;
     static isValid(control: FormControl) { 
         const re = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/ 
             .test( 
@@ -17,10 +18,8 @@ export class EmailValidator {
                 }; 
             }
             
-    // goToSignup():void { 
-    //     this.navCtrl.push('SignupPage'); 
-    // } 
-    // goToResetPassword():void { 
-    //     this.navCtrl.push('ResetPasswordPage'); 
-    // }
+    goToSignup():void { 
+        this.navCtrl.push('SignupPage'); 
+    } 
+   
 }

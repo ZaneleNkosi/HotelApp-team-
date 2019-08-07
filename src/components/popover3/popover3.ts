@@ -11,6 +11,7 @@ import { Popover4Component} from '../../components/popover4/popover4';
 import { InformationProvider } from '../../providers/information/information';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ResetComponent } from '../reset/reset';
 
 
 @Component({
@@ -115,4 +116,7 @@ export class Popover3Component {
         } 
         
       }
+      goToResetPassword():void { 
+             this.navCtrl.push(ResetComponent); 
+       }
 }
