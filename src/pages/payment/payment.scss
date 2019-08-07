@@ -8,7 +8,10 @@ page-payment {
   }
 
   .book {
+    text-align: center;
     font-size: 45px;
+    color: rgb(163, 112, 16);
+
   }
 
   .cards {
@@ -17,20 +20,28 @@ page-payment {
 
     i {
       font-size: 40px;
+      margin: 5px;
     }
   }
 
   .info {
     display: flex;
     flex-flow: column;
-    width: 80%;
+    width: 100%;
     position: relative;
-    top: 10%;
+    top: 30%;
 
     .dates {
       display: flex;
       flex-flow: row;
     }
   }
+
+.btn{
+  width: 80%;
+  position: relative;
+  top: 15%;
+  left: 10%;
+}
 
 }
