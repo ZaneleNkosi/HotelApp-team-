@@ -1,5 +1,12 @@
 page-payment {
 
+  .container{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .book {
     p {
       color: rgb(170, 135, 60);
