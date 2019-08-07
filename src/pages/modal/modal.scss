@@ -9,7 +9,7 @@ page-modal {
 
   .text {
     text-align: center;
-    font-family: 'Jura';
+    font-family: 'Dosis';
     font-size: 25px;
     color: rgb(163, 112, 16);
     position: relative;
@@ -33,38 +33,34 @@ page-modal {
 
     .name {
       text-align: center;
+
       #name {
         font-size: 30px;
         font-weight: bold;
       }
 
-      #email{
+      #email {
         font-size: 13px;
+      }
+    }
+
+    .btn {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Dosis';
+
+      #butt {
+        color: white !important;
+      }
+
+      button {
+        width: 80%;
+        position: relative;
+        top: 25%;
       }
     }
   }
 
-  .btn {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-
-    #butt{
-      color: white !important;
-      background: black;
-    }
-   button{
-     color: white;
-     width: 80%;
-     position: relative;
-     top: 25%;
-   }
-    }
-  
-
-  span {
-    font-weight: bold;
-    color: black;
-  }
 }

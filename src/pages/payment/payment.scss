@@ -1,28 +1,17 @@
 page-payment {
 
+  .container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .book {
-    p {
-      color: rgb(170, 135, 60);
-      text-align: center;
-      font-family: 'Jura';
-      font-size: 40px;
-    }
-  }
-
-  .item {
-    background: transparent;
-    color: rgb(10, 10, 10);
-    font-family: 'Jura';
-  }
-
-  .btn {
-    position: relative;
-    left: 10%;
+    font-size: 45px;
   }
 
   .cards {
-    position: relative;
-    left: 20%;
     display: flex;
     flex-flow: row;
 
@@ -31,17 +20,17 @@ page-payment {
     }
   }
 
-  .button {
-    margin-top: 20px;
+  .info {
+    display: flex;
+    flex-flow: column;
     width: 80%;
-  
+    position: relative;
+    top: 10%;
+
+    .dates {
+      display: flex;
+      flex-flow: row;
+    }
   }
 
-  .date {
-    color: rgba(12, 12, 12, 0.575);
-  }
-
-  .form {
-    margin-top: 30%;
-  }
 }
