@@ -26,10 +26,10 @@ export class ProfilePage {
     image: null
   };
 
-  showComp = true;
+  showComp = false;
   users
   displayProfile = {};
-  displayBooking = {};
+  displayBooking = [];
   favourite;
 
   constructor(private infoProvider: InformationProvider,  public loadingCtrl: LoadingController, public navCtrl: NavController, public navParams: NavParams) {
@@ -121,10 +121,14 @@ export class ProfilePage {
       if (querySnapshot.empty !== true) {
         console.log('Got data', querySnapshot);
         querySnapshot.forEach(doc => {
-          this.displayBooking = doc.data();
+          this.displayBooking.push(doc.data());
           console.log('Booking Document: ', this.displayBooking)
-        })
+          // console.log('bookings', doc.data());
+          
+        });
+        
       } else {
+        this.showComp = true;
         console.log('No Booking data');
       }
       // dismiss the loading
@@ -134,7 +138,7 @@ export class ProfilePage {
       console.log("Query Results: ", err);
       // dismiss the loading
       load.dismiss();
-    })
+    });
   }
 
 

@@ -19,8 +19,12 @@ db = firebase.firestore();
 users
 
 review = {
+  name: "",
   message: "",
+  roomName:""
 }
+displayProfile = {};
+
   constructor(public viewCtrl: ViewController, private infoProvider: InformationProvider,  private loadingCtrl: LoadingController, public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -29,6 +33,7 @@ review = {
     console.log(this.navParams.data);
     this.suite = this.navParams.data;
     this.users = this.infoProvider.user.uid;
+    this.retrieveProfile()
   }
 
   gotolist() {
@@ -44,12 +49,49 @@ review = {
     content: 'Loading'
   });
   load.present();
+  this.db.collection('reviews').doc(this.review.name + this.infoProvider.returnUser().uid).set(this.review).then(() => {
 
-  this.db.collection("hotel").doc('aDJnBKRlpH482p3HwMlM').collection("rooms").doc(this.navParams.data.Name).set(this.review).then(() => {
-   
-    });
     load.dismiss();
+  });
+    load.dismiss();
+
 }
+
+retrieveProfile() {
+
+ 
+  let users = this.db.collection('User Profiles');
+
+  let load = this.loadingCtrl.create({
+    content: 'Loading'
+  });
+  load.present();
+  // ...query the profile that contains the uid of the currently logged in user...
+  console.log('Profile User: ', this.infoProvider.returnUser());
+  let query = users.where("uid", "==", this.infoProvider.returnUser().uid);
+  query.get().then(querySnapshot => {
+    // ...log the results if the document exists...
+    if (querySnapshot.empty !== true) {
+      console.log('Got data', querySnapshot);
+      querySnapshot.forEach(doc => {
+        this.displayProfile = doc.data();
+
+        console.log('Profile Document: ', this.displayProfile)
+      })
+    } else {
+      console.log('No data');
+    }
+    // dismiss the loading
+    load.dismiss();
+  }).catch(err => {
+    // catch any errors that occur with the query.
+    console.log("Query Results: ", err);
+    // dismiss the loading
+    load.dismiss();
+  })
+}
+
+
 
 
 

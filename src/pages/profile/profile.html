@@ -8,8 +8,11 @@
     <div class="top">
      
       <div class="upload">
+        
           <div class="home" (click)="gotolist()">
-              <ion-icon name="home"></ion-icon>
+
+            <ion-icon name="arrow-back"></ion-icon>
+
           </div>
         <img src="{{displayProfile.image}}">
       </div>
@@ -31,20 +34,27 @@
             <p id="email">{{displayProfile.email}}</p>
           </div>
       </div>
+    
 
       <p class="bhist">Booking History</p>
-      <div class="history">
+      <div class="body">
+          <div class="book" *ngIf="showComp">
+              <p>YOU DO NOT HAVE <br> ANY BOOKINGS YET</p>
+            </div>
+      <div class="history" *ngFor = "let n of displayBooking">
+
+         
        
           <div class="roomname">
-            <p class="rname">{{displayBooking.roomName}}</p>
+            <p class="rname">{{n.roomName}}</p>
           </div>
 
           <div class="extras">
-              <p>Check-In: {{displayBooking.date1}} &nbsp; Check-Out {{displayBooking.date2}}</p>
-              <p>Days at the hotel: {{displayBooking.nodays}}</p>
+              <p>Check-In: {{n.date1}} &nbsp; Check-Out {{n.date2}}</p>
+              <p>Days at the hotel: {{n.nodays}}</p>
             </div>
         </div>
-      
+      </div>
     </div>
   </div>
   </div>

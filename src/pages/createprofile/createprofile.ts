@@ -5,14 +5,8 @@ import { Profile } from '../../model/profile';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { InformationProvider } from '../../providers/information/information';
+import { ListPage } from '../list/list';
 
-
-/**
- * Generated class for the CreateprofilePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -83,7 +77,7 @@ export class CreateprofilePage {
 
         this.db.collection("User Profiles").doc(this.users).set(this.profile).then(() => {
           load.dismiss();
-          this.navCtrl.push('ProfilePage');
+          this.navCtrl.push(ListPage);
          
         });
       })

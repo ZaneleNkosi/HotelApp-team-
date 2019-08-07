@@ -39,7 +39,7 @@ export class BookingPage {
   users;
   roomDetails = {}
   displayProfile = {}
-  constructor(private loadingCtrl: LoadingController, public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth, private infoProvider: InformationProvider) {
+  constructor(private loadingCtrl: LoadingController, public navCtrl: NavController, public navParams: NavParams, private infoProvider: InformationProvider) {
   }
 
   ionViewDidLoad() {
@@ -83,8 +83,7 @@ export class BookingPage {
     //   this.afDatabase.object(`bookings/${auth.uid}`).set(this.bookings)
     //     .then(() => this.navCtrl.push('ModalPage'))
     // })
-
-    this.db.collection("bookings").doc(this.users + this.navParams.data.Name).set(this.bookings).then(() => {
+    this.db.collection('bookings').doc(this.bookings.roomName + this.infoProvider.returnUser().uid).set(this.bookings).then(() => {
       this.navCtrl.push('ModalPage')
       load.dismiss();
     });
@@ -106,7 +105,10 @@ export class BookingPage {
       if (querySnapshot.empty !== true) {
         console.log('Got data', querySnapshot);
         querySnapshot.forEach(doc => {
-          this.displayProfile = doc.data();
+          this.bookings.name = doc.data().firstname;
+          this.bookings.email = doc.data().email;
+          this.bookings.phone = doc.data().phone;
+
 
           console.log('Profile Document: ', this.displayProfile)
         })

@@ -37,63 +37,6 @@ export class ListPage {
     });
   }
 
-  // gotoroom1() {
-  //   this.navCtrl.push('Room1Page');
-  // }
-  // gotoroom2() {
-  //   this.navCtrl.push('Room2Page');
-  // }
-  // gotoroom3() {
-  //   this.navCtrl.push('Room3Page');
-  // }
-  // gotoroom4() {
-  //   this.navCtrl.push('Room4Page');
-  // }
-  // gotoroom5() {
-  //   this.navCtrl.push('Room5Page');
-  // }
-  // gotoroom6() {
-  //   this.navCtrl.push('Room6Page');
-  // }
-
-  // treatments(val) {
-  //   this.infoProvider.storeTreatment(val);
-
-  //   const confirm = this.alertCtrl.create({
-  //     title: 'Confirmed',
-  //     message: 'Your Treatment has been Confirmed',
-  //     buttons: [
-  //       {
-  //         text: 'Ok',
-  //         handler: () => {
-  //           this.navCtrl.push(ListPage)
-  //           console.log('ListPage: Ok clicked');
-  //         }
-  //       }
-  //     ]
-  //   });
-  //   confirm.present();
-  // }
-
-  // reservation(val) {
-  //   this.infoProvider.storeReservation(val);
-
-  //   const confirm = this.alertCtrl.create({
-  //     title: 'Confirmed',
-  //     message: 'Your Reservation has been made',
-  //     buttons: [
-  //       {
-  //         text: 'Ok',
-
-  //       }
-  //     ]
-  //   });
-  //   confirm.present();
-  // }
-
-  // suites(val) {
-  //   this.infoProvider.storePrices(val);
-  // }
 
   getRooms() {
     this.db.collection('hotel').doc('aDJnBKRlpH482p3HwMlM').collection('rooms').get().then(room => {

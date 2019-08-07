@@ -43,7 +43,7 @@ popover4 {
 
     .icon {
       color: rgb(170, 135, 60);
-      font-size: 30px;
+      font-size: 20px;
     }
   }
 
@@ -58,7 +58,7 @@ popover4 {
       color: white;
       padding: 20px;
       font-weight: bold;
-      font-size: 65px;
+      font-size: 40px;
     }
   }
 
@@ -83,10 +83,11 @@ popover4 {
   }
 
   p {
-   font-family: 'Jura';
-   span{
-     color: blue;
-   }
+    font-family: 'Jura';
+
+    span {
+      color: rgb(91, 91, 236);
+    }
   }
 
 
@@ -100,9 +101,9 @@ popover4 {
   }
 
 }
+
 .error {
   >div {
     background-color: rgb(22, 154, 216) !important;
   }
 }
-
