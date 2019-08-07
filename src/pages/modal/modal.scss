@@ -37,13 +37,28 @@ page-modal {
         font-size: 30px;
         font-weight: bold;
       }
+
+      #email{
+        font-size: 13px;
+      }
     }
   }
 
   .btn {
-   .button{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    #butt{
+      color: white !important;
+      background: black;
+    }
+   button{
      color: white;
      width: 80%;
+     position: relative;
+     top: 25%;
    }
     }
   

@@ -9,7 +9,7 @@
 
       <div class="name">
         <p id="name">{{displayBooking.name}}</p>
-        <p>{{displayBooking.email}}</p>
+        <p id="email">{{displayBooking.email}}</p>
       </div>
       <div class="dets">
         <p>You will be staying at<br>
@@ -25,13 +25,14 @@
 
     </div>
     <!-- Button -->
-    <div class="btn">
-      <ion-buttons>
-        <button ion-button (click)="gotoPayment()" color="dark">
-          Continue to Payment
-        </button>
-      </ion-buttons>
-    </div>
+   
+  </div>
+  <div class="btn">
+     
+      <button ion-button (click)="gotoPayment()" id="butt">
+        Continue to Payment
+      </button>
+    
   </div>
 </ion-content>
 
