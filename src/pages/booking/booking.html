@@ -23,12 +23,12 @@
     <div class="dates">
       <ion-item>
         <ion-label stacked>Check-In</ion-label>
-        <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="bookings.date1"></ion-datetime>
+        <ion-input type="date" [(ngModel)]="bookings.date1"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label stacked>Check-Out</ion-label>
-        <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="bookings.date2"></ion-datetime>
+        <ion-input type="date" [(ngModel)]="bookings.date2"></ion-input>
       </ion-item>
     </div>
 
