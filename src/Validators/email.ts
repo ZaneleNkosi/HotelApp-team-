@@ -16,6 +16,8 @@ export class EmailValidator {
                     invalidEmail: true 
                 }; 
             }
+
+            
             
     goToSignup():void { 
         this.navCtrl.push('SignupPage'); 
