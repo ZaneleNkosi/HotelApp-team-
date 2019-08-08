@@ -26,4 +26,26 @@ page-payment {
   }
 }
 
+.book{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+  p{
+    color: rgb(170, 135, 60);
+    font-size: 45px;
+    text-align: center;
+  }
+
+  img{
+    width: 200px;
+    height: 200px;
+  }
+}
+.btn{
+  position: relative;
+  top: 30px;
+}
+
 }

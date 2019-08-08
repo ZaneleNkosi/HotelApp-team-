@@ -11,11 +11,11 @@
             </div>
       </div>
      
-      <div class="search">
+      <!-- <div class="search">
           <ion-item>
             <ion-input type="text" placeholder="Search"></ion-input>
           </ion-item>
-        </div>
+        </div> -->
     </div>
 
     <ion-buttons>
@@ -25,13 +25,21 @@
     </ion-buttons>
   <!--rooms-->
     <div class="body" >
+      
         <div class="room" *ngFor="let n of rooms" (click)="gotoroom(n)">
-            <div class="pic" >
-              <img src="{{n.Image}}" >
-            </div>
-            <div class="desc">
-                <p>{{n.Name}}</p>
-            </div>
+
+          <ion-card>
+            <img src="{{n.Image}}"/>
+            <ion-card-content>
+              <ion-card-title>
+                  {{n.Name}}
+              </ion-card-title>
+              <p>
+                  {{n.Price | currency:'&#82;'}}
+              </p>
+            </ion-card-content>
+          </ion-card>
+      
           </div>
     </div>
   

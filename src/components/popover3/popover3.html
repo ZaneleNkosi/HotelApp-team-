@@ -15,8 +15,7 @@
           <ion-input
           ngDefaultControl 
           formControlName="email" 
-          type="email" 
-          placeholder="Your email address" 
+          type="email"  
           [class.invalid]="!loginForm.controls.email.valid && blur"> 
         </ion-input>
         </ion-item>
@@ -32,7 +31,6 @@
           ngDefaultControl
           formControlName="password" 
           type="password" 
-          placeholder="Your password"
           [class.invalid]="!loginForm.controls.password.valid && blur"> 
         </ion-input>
         </ion-item>
