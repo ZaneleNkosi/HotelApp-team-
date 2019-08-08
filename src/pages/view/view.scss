@@ -8,7 +8,7 @@ page-view {
 
   .top {
     width: 100%;
-    height: 450px;
+    height: 430px;
 
     img {
       height: 100%;
@@ -48,6 +48,7 @@ page-view {
         .name {
           font-size: 15px;
           font-weight: bold;
+          font-family: 'Pacifico'
 
           span {
             font-size: 30px;
@@ -102,5 +103,10 @@ page-view {
       background: rgb(170, 135, 60);
       color: rgba(0, 0, 0, 0.671);
     }
+  }
+  .btn{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
   }
 }

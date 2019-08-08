@@ -50,10 +50,14 @@
               <p class="rname">{{n.roomName}}</p>
             </div>
             <div class="extras">
-              <p>Check-In: {{n.date1}} <br> Check-Out: {{n.date2}}</p>
-              <p>Days at the hotel: {{n.nodays}}</p>
+              <div class="dates">
+                  <p><span>Check-In:</span> {{n.date1}}</p> &nbsp;
+                  <p><span>Check-Out:</span> {{n.date2}}</p>
+              </div>
+              <p id="days">Days at the hotel: {{n.nodays}}</p>
+              <hr>
             </div>
-            <hr>
+           
           </div>
         </div>
       </div>
