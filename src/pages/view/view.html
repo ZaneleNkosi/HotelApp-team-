@@ -28,13 +28,10 @@
       </div>
 
       <p class="feat">Features</p>
-      <div id="feat">
-        <p>{{suite.Tea}}</p> <br>
-        <p>{{suite.Mini}}</p> <br>
-        <p>{{suite.Satellite}}</p> <br>
-        <p>{{suite.Wifi}}</p> <br>
-        <p>{{suite.roomService}}</p> <br>
-        <p>{{suite.Break}}</p> <br>
+      <div id="feat" >
+        <div class="feature" *ngFor="let n of suite.features">
+          {{n}}
+        </div>
       </div>
 
     </div>
@@ -43,16 +40,4 @@
   <div class="btn">
     <button ion-button full color="dark" (click)="gotobooking()">Book Now</button>
   </div>
-
-  <!-- <div class="userform">
-    <img src="../../assets/imgs/181506.png">
-    <div class="controls">
-       <ion-item>
-        <ion-input type="text" [(ngModel)]="review.name">{{displayProfile.firstname}}</ion-input>
-      </ion-item> 
-      <input type="text" value="{{displayProfile.firstname}}" [(ngModel)]="review.name">
-      <textarea placeholder="Review here" [(ngModel)]="review.message"></textarea>
-      <button ion-button color="dark" (click)="createmessage()">Send</button>
-    </div>
-  </div> -->
 </ion-content>

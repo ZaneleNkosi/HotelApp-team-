@@ -42,6 +42,8 @@ page-view {
       #roomId {
         display: flex;
         flex-flow: column;
+        position: relative;
+        bottom: 30px;
 
         .name {
           font-size: 15px;
@@ -61,6 +63,8 @@ page-view {
     }
 
     #price {
+      position: relative;
+      bottom: 30px;
       font-size: 20px;
       font-weight: bold;
     }
@@ -73,18 +77,30 @@ page-view {
     text-align: center;
     height: 20px;
     position: relative;
-  bottom: 50px;
+    bottom: 70px;
   }
 
-  .feat{
+  .feat {
     font-size: 20px;
     text-align: center;
+    font-weight: bold;
   }
 
-  #feat{
+  #feat {
+    position: relative;
+    bottom: 15px;
+    padding: 10px;
+    text-align: center;
     display: flex;
     flex-wrap: wrap;
-    background:rgb(170, 135, 60);
-    text-align: center;
+    align-items: center;
+
+    .feature {
+      font-size: 16px;
+      padding: 5px;
+      margin: 5px;
+      background: rgb(170, 135, 60);
+      color: rgba(0, 0, 0, 0.671);
+    }
   }
 }

@@ -1,7 +1,7 @@
 import { Popover3Component } from './../../components/popover3/popover3';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController, Slides, AlertController, LoadingController } from 'ionic-angular';
-import { PopoverComponent } from '../../components/popover/popover';
+//import { PopoverComponent } from '../../components/popover/popover';
 import { InformationProvider } from '../../providers/information/information';
 import * as firebase from 'firebase';
 
@@ -31,12 +31,12 @@ export class ListPage {
     this.slider.slideTo(index);
   }
 
-  presentPopover(myEvent) {
-    const popover = this.popoverCtrl.create(PopoverComponent);
-    popover.present({
-      ev: myEvent
-    });
-  }
+  // presentPopover(myEvent) {
+  //   const popover = this.popoverCtrl.create(PopoverComponent);
+  //   popover.present({
+  //     ev: myEvent
+  //   });
+  // }
 
   gotoProfile(){
     this.navCtrl.push('ProfilePage')
