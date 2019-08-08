@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, AlertController, Loading } from 'ionic-angular';
 import * as firebase from 'firebase';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { ListPage } from '../list/list';
 import { InformationProvider } from '../../providers/information/information';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormsModule, Validator } from '@angular/forms';
+import { EmailValidator } from '../../Validators/email';
 /**
  * Generated class for the PaymentPage page.
  *
@@ -20,7 +22,8 @@ import { InformationProvider } from '../../providers/information/information';
 export class PaymentPage {
   db = firebase.firestore();
   ref = firebase.database().ref('payments/');
-
+  public credentialsForm: FormGroup; 
+  public loading: Loading
   payments = {
 
     name: "",
@@ -29,7 +32,25 @@ export class PaymentPage {
     cvv: ""
   }
   users
-  constructor(private infoProvider: InformationProvider, public alertCtrl: AlertController, private afDatabase: AngularFireDatabase, public navCtrl: NavController, public navParams: NavParams, private modal: ModalController, private afAuth: AngularFireAuth) {
+  constructor(
+    private infoProvider: InformationProvider, 
+    public alertCtrl: AlertController, 
+    private afDatabase: AngularFireDatabase, 
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    private modal: ModalController, 
+    private afAuth: AngularFireAuth,
+    formBuilder: FormBuilder,
+    private FormsModule: FormsModule,
+    private ReactiveFormsModule: ReactiveFormsModule,
+    ) {
+      this.credentialsForm = formBuilder.group({ 
+        account: [ '', Validators.compose([Validators.required, Validators.minLength(13)]) ], 
+        cvv: [ '', Validators.compose([Validators.required, Validators.minLength(3)])], 
+        name: [ '', Validators.compose([Validators.required])],
+        expiry: [ '', Validators.compose([Validators.required]) 
+      ]
+});   
   }
 
   ionViewDidLoad() {

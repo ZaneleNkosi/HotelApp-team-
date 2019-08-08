@@ -39,7 +39,11 @@ export class BookingPage {
   users;
   roomDetails = {}
   displayProfile = {}
-  constructor(private loadingCtrl: LoadingController, public navCtrl: NavController, public navParams: NavParams, private infoProvider: InformationProvider) {
+  constructor(
+    private loadingCtrl: LoadingController, 
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    private infoProvider: InformationProvider) {
   }
 
   ionViewDidLoad() {
