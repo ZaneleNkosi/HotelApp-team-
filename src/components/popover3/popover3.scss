@@ -7,6 +7,13 @@ popover3 {
     color: white;
   }
 
+  .container{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .back {
     position: absolute;
     top: 0%;
@@ -14,8 +21,15 @@ popover3 {
 
     .icon {
       color: rgb(170, 135, 60);
-      font-size: 20px;
+      font-size: 20px;text-align: center;     
+       p{
+        text-align: center;
+      }
     }
+  }
+  #forgot{
+    color:whitesmoke;
+    font-size: 13px;
   }
 
   .container {
@@ -30,7 +44,7 @@ popover3 {
 
     h1 {
       text-align: center;
-      font-family: 'Jura';
+      font-family: 'Dosis';
       font-size: 40px;
       background: transparent;
       color: white;
@@ -47,7 +61,7 @@ popover3 {
 
     .label {
       color: white;
-      font-family: 'Jura';
+      font-family: 'Dosis';
     }
 
     .input {
@@ -56,7 +70,7 @@ popover3 {
 
     .item {
       background: transparent;
-      font-family: 'Jura';
+      font-family: 'Dosis';
     }
   }
 
@@ -70,7 +84,7 @@ popover3 {
       color: white;
       border: 2px solid whitesmoke;
       border-radius: 50%;
-      font-family: 'Jura';
+      font-family: 'Dosis';
     }
   }
 
@@ -82,21 +96,21 @@ popover3 {
   }
 
   #login {
-    background: rgba(8, 8, 8, 0.377);
+    background: rgba(8, 8, 8, 0.418);
     color: whitesmoke;
     border-radius: 20px;
     width: 100%;
-    font-family: 'Jura';
+    font-family: 'Dosis';
   }
 
   #register {
     color: black;
-    font-family: 'Jura';
+    font-family: 'Dosis';
   }
 
 }
 p {
-  font-family: 'Jura';
+  font-family: 'Dosis';
   span{
     color:rgb(91, 91, 236);
   }

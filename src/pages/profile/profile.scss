@@ -30,6 +30,10 @@ page-profile {
         display: flex;
         flex-flow: row;
         justify-content: space-between;
+        .back1{
+          position: relative;
+          right: -350px;
+        }
      
       }
 

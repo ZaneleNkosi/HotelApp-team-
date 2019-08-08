@@ -1,15 +1,14 @@
 page-view {
   .container {
-    display: grid;
-    // flex-flow: column;
-    // justify-content: center;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
     align-items: center;
-    text-align: center;
   }
 
   .top {
     width: 100%;
-    height: 470px;
+    height: 450px;
 
     img {
       height: 100%;
@@ -24,164 +23,84 @@ page-view {
 
       .icon {
         color: rgb(255, 255, 255);
-        font-size: 35px;
-      }
-    }
-
-    .roomId {
-      display: flex;
-      flex-flow: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 5;
-      position: relative;
-      bottom: 75%;
-      text-align: center;
-      color: white;
-      -webkit-text-stroke: 1px black;
-
-      .name {
-        font-family: 'Teko';
-        font-size: 50px;
-      }
-
-      .type {
-        margin: -60px;
-        font-size: 20px;
-        font-family: 'Abel';
-        font-weight: bold;
+        font-size: 30px;
       }
     }
   }
 
   .desc {
+    display: flex;
+    flex-flow: column;
 
+    .prices {
+      display: flex;
+      flex-flow: row;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 16px;
+
+      #roomId {
+        display: flex;
+        flex-flow: column;
+        position: relative;
+        bottom: 30px;
+
+        .name {
+          font-size: 15px;
+          font-weight: bold;
+
+          span {
+            font-size: 30px;
+            color: black;
+          }
+        }
+
+        .type {
+          font-size: 20px;
+          font-weight: bold;
+        }
+      }
+    }
+
+    #price {
+      position: relative;
+      bottom: 30px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+  }
+
+  #desc {
+    font-size: 13px;
     padding: 10px;
-    font-size: 12px;
-    font-family: 'Abel';
-
+    text-align: center;
+    height: 20px;
+    position: relative;
+    bottom: 70px;
   }
 
   .feat {
-
-    font-size: 25px;
-    font-family: 'Abel';
-
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
   }
 
   #feat {
-
+    position: relative;
+    bottom: 15px;
+    padding: 10px;
+    text-align: center;
     display: flex;
     flex-wrap: wrap;
-    padding: 10px;
-    font-size: 15px;
+    align-items: center;
 
-    p {
-      background: rgba(163, 112, 16, 0.589);
-      border-radius: 20px;
-      margin: 10px;
-      text-align: center;
-      color: white;
-      font-family: 'Dosis';
+    .feature {
+      font-size: 16px;
       padding: 5px;
+      margin: 5px;
+      background: rgb(170, 135, 60);
+      color: rgba(0, 0, 0, 0.671);
     }
   }
-
-  .btn {
-    width: 90%;
-    align-content: center;
-    position: relative;
-    left: 20px;
-    position: absolute;
-    bottom: 0;
-    font-family: 'Abel';
-  }
-
-  .plus {
-    border-radius: 50%;
-  }
-
-  // .fab {
-  //   button {
-  //     background: white;
-  //     color: black;
-  //   }
-  // }
-
-  // .userform {
-  //   position: fixed;
-  //   bottom: 10px;
-  //   right: 10px;
-  //   bottom: 10px;
-  //   right: 10px;
-  //   z-index: 51;
-  //   width: 70px;
-  //   height: 70px;
-  //   display: grid;
-  //   align-items: center;
-  //   text-align: center;
-  //   transition: 0.3s;
-  //   padding: 10px;
-  //   border-radius: 200px;
-  //   text-align: center;
-  //   background: white;
-  //   overflow: hidden;
-  //   box-shadow: 0px 0px 10px #18181852;
-
-  //   img {
-  //     width: 100%;
-  //     height: 100%;
-  //     object-fit: cover;
-  //     border-radius: 200px;
-  //   }
-
-  //   input {
-  //     width: 90%;
-  //     border: none;
-  //     padding: 5px;
-  //     border-radius: 5px;
-  //     margin: 5px 0px;
-  //   }
-
-  //   select {
-  //     width: 90%;
-  //     border: none;
-  //     padding: 5px;
-  //     border-radius: 5px;
-  //     margin: 5px 0px;
-  //   }
-
-  //   textarea {
-  //     width: 90%;
-  //     height: 90px;
-  //     border: none;
-  //     border-radius: 5px;
-  //     padding: 5px;
-  //   }
-
-  //   button {
-  //     width: 90%;
-  //     padding: 5px;
-  //     border: none;
-  //     background: #223756;
-  //     color: white;
-  //     border-radius: 5px;
-  //   }
-
-  //   .controls {
-  //     display: none;
-  //   }
-  // }
-
-  // .userform:hover {
-  //   border-radius: 10px;
-  //   width: auto;
-  //   height: auto;
-  //   background: rgba(165, 121, 50, 0.514);
-  // }
-
-  // .userform:hover .controls {
-  //   display: block;
-  // }
-
 }

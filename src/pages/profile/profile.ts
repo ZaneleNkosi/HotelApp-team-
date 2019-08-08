@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+import { IonicPage, PopoverController, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { Profile } from '../../model/profile';
 import * as firebase from 'firebase';
 import { ListPage } from '../../pages/list/list';
 import { InformationProvider } from '../../providers/information/information';
-
+import { PopoverComponent} from '../../components/popover/popover';
 @IonicPage()
 @Component({
   selector: 'page-profile',
@@ -32,7 +32,7 @@ export class ProfilePage {
   displayBooking = [];
   favourite;
 
-  constructor(private infoProvider: InformationProvider,  public loadingCtrl: LoadingController, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public popoverCtrl: PopoverController, private infoProvider: InformationProvider,  public loadingCtrl: LoadingController, public navCtrl: NavController, public navParams: NavParams) {
   }
   ionViewDidLoad() {
 
@@ -45,6 +45,13 @@ export class ProfilePage {
     })
     this.favourite = this.navParams.data
     console.log('Favourite Room', this.infoProvider.favourite);
+  }
+
+  async presentPopover(myEvent) {
+    const popover = await this.popoverCtrl.create(PopoverComponent);
+    popover.present({
+      ev: myEvent 
+    });
   }
 
   retrieveData() {

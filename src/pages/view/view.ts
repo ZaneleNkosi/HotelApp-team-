@@ -32,8 +32,8 @@ displayProfile = {};
     console.log('ionViewDidLoad ViewPage');
     console.log(this.navParams.data);
     this.suite = this.navParams.data;
-    this.users = this.infoProvider.user.uid;
-    this.retrieveProfile()
+    // this.users = this.infoProvider.user.uid;
+    // this.retrieveProfile()
   }
 
   gotolist() {
@@ -57,39 +57,39 @@ displayProfile = {};
 
 }
 
-retrieveProfile() {
+// retrieveProfile() {
 
  
-  let users = this.db.collection('User Profiles');
+//   let users = this.db.collection('User Profiles');
 
-  let load = this.loadingCtrl.create({
-    content: 'Loading'
-  });
-  load.present();
-  // ...query the profile that contains the uid of the currently logged in user...
-  console.log('Profile User: ', this.infoProvider.returnUser());
-  let query = users.where("uid", "==", this.infoProvider.returnUser().uid);
-  query.get().then(querySnapshot => {
-    // ...log the results if the document exists...
-    if (querySnapshot.empty !== true) {
-      console.log('Got data', querySnapshot);
-      querySnapshot.forEach(doc => {
-        this.displayProfile = doc.data();
+//   let load = this.loadingCtrl.create({
+//     content: 'Loading'
+//   });
+//   load.present();
+//   // ...query the profile that contains the uid of the currently logged in user...
+//   console.log('Profile User: ', this.infoProvider.returnUser());
+//   let query = users.where("uid", "==", this.infoProvider.returnUser().uid);
+//   query.get().then(querySnapshot => {
+//     // ...log the results if the document exists...
+//     if (querySnapshot.empty !== true) {
+//       console.log('Got data', querySnapshot);
+//       querySnapshot.forEach(doc => {
+//         this.displayProfile = doc.data();
 
-        console.log('Profile Document: ', this.displayProfile)
-      })
-    } else {
-      console.log('No data');
-    }
-    // dismiss the loading
-    load.dismiss();
-  }).catch(err => {
-    // catch any errors that occur with the query.
-    console.log("Query Results: ", err);
-    // dismiss the loading
-    load.dismiss();
-  })
-}
+//         console.log('Profile Document: ', this.displayProfile)
+//       })
+//     } else {
+//       console.log('No data');
+//     }
+//     // dismiss the loading
+//     load.dismiss();
+//   }).catch(err => {
+//     // catch any errors that occur with the query.
+//     console.log("Query Results: ", err);
+//     // dismiss the loading
+//     load.dismiss();
+//   })
+// }
 
 
 
