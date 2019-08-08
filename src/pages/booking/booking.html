@@ -20,26 +20,45 @@
       <ion-label stacked>Email</ion-label>
       <ion-input 
       type="email" 
+      [class.invalid]="!bookingForm.controls.email.valid && blur"
       [(ngModel)]="bookings.email"
       [formControl]="bookingForm.controls['email']"></ion-input>
     </ion-item>
+
+    <ion-item class="error-message" 
+        *ngIf="!bookingForm.controls.email.valid && bookingForm.controls.email.touched"> 
+        <p>Please enter email.</p> 
+      </ion-item>
+
 
     <ion-item>
       <ion-label stacked>Phone</ion-label>
       <ion-input 
       type="tel" 
+      [class.invalid]="!bookingForm.controls.tel.valid && blur"
       [(ngModel)]="bookings.phone"
       [formControl]="bookingForm.controls['tel']"></ion-input>
     </ion-item>
+
+    <ion-item class="error-message" 
+        *ngIf="!bookingForm.controls.tel.valid && bookingForm.controls.tel.touched"> 
+        <p>10 Digits only.</p> 
+      </ion-item>
 
     <div class="dates">
       <ion-item>
         <ion-label stacked>Check-In</ion-label>
         <ion-input 
         type="date" 
+        [class.invalid]="!bookingForm.controls.date.valid && blur"
         [(ngModel)]="bookings.date1"
         [formControl]="bookingForm.controls['date']"></ion-input>
       </ion-item>
+
+      <ion-item class="error-message" 
+      *ngIf="!bookingForm.controls.date.valid && bookingForm.controls.date.touched"><br>
+      <p>Past Date invalid.</p> 
+    </ion-item>
 
       <ion-item>
         <ion-label stacked>Check-Out</ion-label>
@@ -73,8 +92,6 @@
     <ion-item *ngIf="roomDetails.Name">
       <ion-label stacked>Room Name</ion-label>
       <ion-input 
-      ngDefaultControl 
-      formControlName="name"
       type="name" 
       [formControl]="bookingForm.controls['name']"
       [(ngModel)]="bookings.roomName">{{roomDetails.Name}}</ion-input>

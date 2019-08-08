@@ -43,6 +43,7 @@ export class BookingPage {
   users;
   roomDetails = {}
   displayProfile = {}
+  bookingForm: FormGroup;
   constructor(
     private loadingCtrl: LoadingController, 
     public navCtrl: NavController, 
@@ -51,10 +52,11 @@ export class BookingPage {
     formBuilder: FormBuilder,
     private FormsModule: FormsModule,
     private ReactiveFormsModule: ReactiveFormsModule,) {
+      
       this.bookingForm = formBuilder.group({ 
     email: [ '', Validators.compose([Validators.required, EmailValidator.isValid]) ], 
     name: [ '', Validators.compose([Validators.required])], 
-    tel: [ '', Validators.compose([Validators.required, Validators.minLength(10)]) ], 
+    tel: [ '', Validators.compose([Validators.required,Validators.minLength(10), Validators.maxLength(10)]) ], 
     date: [ '', Validators.compose([Validators.required]) ], 
     number: [ '', Validators.compose([Validators.required]) ], 
    

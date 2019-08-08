@@ -45,8 +45,8 @@ export class PaymentPage {
     private ReactiveFormsModule: ReactiveFormsModule,
     ) {
       this.credentialsForm = formBuilder.group({ 
-        account: [ '', Validators.compose([Validators.required, Validators.minLength(13)]) ], 
-        cvv: [ '', Validators.compose([Validators.required, Validators.minLength(3)])], 
+        account: [ '', Validators.compose([Validators.required, Validators.minLength(13), Validators.maxLength(13)]) ], 
+        cvv: [ '', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(3)])], 
         name: [ '', Validators.compose([Validators.required])],
         expiry: [ '', Validators.compose([Validators.required]) 
       ]
