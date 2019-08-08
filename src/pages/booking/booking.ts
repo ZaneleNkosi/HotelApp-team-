@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, Loading } from 'ionic-angular';
 import * as firebase from 'firebase';
 import { Booking } from '../../model/user';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { InformationProvider } from '../../providers/information/information';
+import { FormGroup, Validators, FormBuilder,FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { EmailValidator } from '../../Validators/email';
 
 @IonicPage()
 @Component({
@@ -16,7 +18,9 @@ import { InformationProvider } from '../../providers/information/information';
 export class BookingPage {
   db = firebase.firestore();
   ref = firebase.database().ref('bookings/');
-
+  public loginForm: FormGroup; 
+  public loading: Loading
+  
   bookings =
     {
       name: "",
@@ -39,7 +43,24 @@ export class BookingPage {
   users;
   roomDetails = {}
   displayProfile = {}
-  constructor(private loadingCtrl: LoadingController, public navCtrl: NavController, public navParams: NavParams, private infoProvider: InformationProvider) {
+  bookingForm: FormGroup;
+  constructor(
+    private loadingCtrl: LoadingController, 
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    private infoProvider: InformationProvider,
+    formBuilder: FormBuilder,
+    private FormsModule: FormsModule,
+    private ReactiveFormsModule: ReactiveFormsModule,) {
+      
+      this.bookingForm = formBuilder.group({ 
+    email: [ '', Validators.compose([Validators.required, EmailValidator.isValid]) ], 
+    name: [ '', Validators.compose([Validators.required])], 
+    tel: [ '', Validators.compose([Validators.required,Validators.minLength(10), Validators.maxLength(10)]) ], 
+    date: [ '', Validators.compose([Validators.required]) ], 
+    number: [ '', Validators.compose([Validators.required]) ], 
+   
+}); 
   }
 
   ionViewDidLoad() {

@@ -1,5 +1,6 @@
-<ion-content padding>
-  <div class="container">
+<!-- <ion-content padding> -->
+<!--   
+  <div class="container"> -->
 
     <div class="book">
       <img src="../../assets/imgs/UzuriLogo.PNG">
@@ -14,31 +15,69 @@
       <i class="fab fa-cc-amex fa-3x m-2"></i>
     </div>
 
+    <form [formGroup]="credentialsForm">
     <div class="inputs">
       <ion-item>
         <ion-label stacked>Name on Card</ion-label>
-        <ion-input type="text" [(ngModel)]="payments.name"></ion-input>
+        <ion-input 
+        type="name" 
+        [class.invalid]="!credentialsForm.controls.name.valid && blur"
+        [formControl]="credentialsForm.controls['name']"
+        [(ngModel)]="payments.name"></ion-input>
       </ion-item>
+
+      <ion-item class="error-message" 
+        *ngIf="!credentialsForm.controls.name.valid && credentialsForm.controls.name.touched"> 
+        <p>Please enter name on card.</p> 
+      </ion-item>
+
       <ion-item>
         <ion-label stacked> Your 16 digit Card Number</ion-label>
-        <ion-input type="number" [(ngModel)]="payments.account"></ion-input>
+        <ion-input 
+        type="number" 
+        [formControl]="credentialsForm.controls['account']"
+        [(ngModel)]="payments.account"></ion-input>
       </ion-item>
+
+      <ion-item class="error-message" 
+        *ngIf="!credentialsForm.controls.account.valid && credentialsForm.controls.account.touched"> 
+        <p>Please enter 13 digit Card Number.</p> 
+      </ion-item>
+
       <div class="dates">
         <ion-item>
           <ion-label stacked>Expiry Date</ion-label>
-          <ion-input type="text" [(ngModel)]="payments.expiry"></ion-input>
+          <ion-input 
+          type="text" 
+          [formControl]="credentialsForm.controls['expiry']"
+          [(ngModel)]="payments.expiry"></ion-input>
         </ion-item>
+
+        <ion-item class="error-message" 
+        *ngIf="!credentialsForm.controls.expiry.valid && credentialsForm.controls.expiry.touched"> 
+        <p>Please select valid date.</p> 
+      </ion-item>
+
         <ion-item>
           <ion-label stacked>CVV</ion-label>
-          <ion-input type="number" [(ngModel)]="payments.cvv"></ion-input>
+          <ion-input 
+          type="number" 
+          [formControl]="credentialsForm.controls['cvv']"
+          [(ngModel)]="payments.cvv"></ion-input>
         </ion-item>
+
+        <ion-item class="error-message" 
+        *ngIf="!credentialsForm.controls.cvv.valid && credentialsForm.controls.cvv.touched"> 
+        <p>CVV cannot exceed 3 numbers.</p> 
+      </ion-item>
+
       </div>
     </div>
 
-  </div>
+  <!-- </div> -->
 
   <div class="btn">
-      <button ion-button full color="dark" (click)="createPayment()">Done</button>
+      <button ion-button full color="dark" (click)="createPayment()" type="submit" [disabled]="!credentialsForm.valid">Done</button>
     </div>
 
-</ion-content>
+<!-- </ion-content> -->

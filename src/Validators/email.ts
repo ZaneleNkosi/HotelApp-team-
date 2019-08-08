@@ -1,6 +1,5 @@
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Loading, NavController, AlertController, LoadingController } from 'ionic-angular';
-import { AuthProvider } from '../providers/auth/auth';
+
 
 
 export class EmailValidator {
@@ -17,6 +16,8 @@ export class EmailValidator {
                     invalidEmail: true 
                 }; 
             }
+
+            
             
     goToSignup():void { 
         this.navCtrl.push('SignupPage'); 
