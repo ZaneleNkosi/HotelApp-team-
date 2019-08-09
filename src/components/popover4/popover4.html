@@ -8,19 +8,40 @@
       </div>
     </div>
 
+    <form [formGroup]="signupForm" (submit)="register(user)" novalidate> 
     <div class="npts">
       <ion-item>
         <ion-label floating>Email</ion-label>
-        <ion-input type="email" [(ngModel)]="user.email"></ion-input>
+        <ion-input 
+        ngDefaultControl 
+        formControlName="email" 
+        type="email"  
+        [class.invalid]="!signupForm.controls.email.valid && blur">
+        [(ngModel)]="user.email"></ion-input>
       </ion-item>
+
+      <ion-item class="error-message" 
+      *ngIf="!signupForm.controls.email.valid && signupForm.controls.email.touched"> 
+      <p>Please enter a valid email address.</p> 
+    </ion-item>
 
       <ion-item>
         <ion-label floating>Password</ion-label>
-        <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+        <ion-input 
+        ngDefaultControl
+        formControlName="password" 
+        type="password" 
+        [class.invalid]="!signupForm.controls.password.valid && blur"
+        [(ngModel)]="user.password"></ion-input>
       </ion-item>
 
+      <ion-item class="error-message" 
+      *ngIf="!signupForm.controls.password.valid && signupForm.controls.password.touched"> 
+      <p>Your password needs more than 6 characters.</p> 
+    </ion-item>
 
     </div>
+    </form>
   </div>
   <button ion-button full (click)="register(user)" id="reg">Sign Up</button>
   <p>Already have an account? <span (click)="presentPopover3(myEvent)">Sign in</span></p>
@@ -32,5 +53,6 @@
       </button>
     </ion-buttons>
   </div>
-
+  
 </ion-content>
+

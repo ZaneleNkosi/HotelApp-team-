@@ -26,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { Camera } from "@ionic-native/camera";
 import { AuthProvider } from '../providers/auth/auth';
+import { ProfileProvider } from '../providers/profile/profile';
 
 
 @NgModule({
@@ -73,7 +74,8 @@ import { AuthProvider } from '../providers/auth/auth';
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     InformationProvider,
     Camera,
-    AuthProvider
+    AuthProvider,
+    ProfileProvider
   ]
 })
 export class AppModule { }

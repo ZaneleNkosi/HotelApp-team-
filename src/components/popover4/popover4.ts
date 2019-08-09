@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import { User } from '../../model/user';
-import { NavController, NavParams, ToastController, ViewController, PopoverController  } from 'ionic-angular';
+import { NavController, NavParams, ToastController, ViewController, PopoverController, LoadingController, AlertController, Loading  } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Popover3Component} from '../../components/popover3/popover3';
+import { AuthProvider } from '../../providers/auth/auth';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { EmailValidator } from '../../Validators/email';
 
 
 @Component({
@@ -10,11 +13,30 @@ import { Popover3Component} from '../../components/popover3/popover3';
   templateUrl: 'popover4.html'
 })
 export class Popover4Component {
-
+  public signupForm: FormGroup; 
+  public loading: Loading; 
   user = {} as User;
 
-  constructor(public popoverCtrl: PopoverController,public viewCtrl: ViewController, private toast: ToastController, public navCtrl: NavController, public navParams: NavParams, private fireAuth: AngularFireAuth) {
-  }
+  constructor(
+    public popoverCtrl: PopoverController,
+    public viewCtrl: ViewController, 
+    private toast: ToastController, 
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    private fireAuth: AngularFireAuth,
+    public authProvider: AuthProvider, 
+    public loadingCtrl: LoadingController, 
+    public alertCtrl: AlertController, 
+    formBuilder: FormBuilder 
+    ) {
+      this.signupForm = formBuilder.group({ 
+        email: [ "", 
+        Validators.compose([Validators.required, EmailValidator.isValid]) ], 
+        password: [ "", 
+        Validators.compose([Validators.minLength(6), Validators.required]) ] 
+      });
+}
+ 
   async register(user: User) {
     try {
       const info = await this.fireAuth.auth.createUserWithEmailAndPassword(user.email, user.password);

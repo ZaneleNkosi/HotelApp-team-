@@ -59,6 +59,7 @@ export class BookingPage {
     tel: [ '', Validators.compose([Validators.required,Validators.minLength(10), Validators.maxLength(10)]) ], 
     date: [ '', Validators.compose([Validators.required]) ], 
     number: [ '', Validators.compose([Validators.required]) ], 
+    roomName: [ '', Validators.compose([Validators.required])], 
    
 }); 
   }

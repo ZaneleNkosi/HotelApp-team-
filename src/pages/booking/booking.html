@@ -27,7 +27,7 @@
 
     <ion-item class="error-message" 
         *ngIf="!bookingForm.controls.email.valid && bookingForm.controls.email.touched"> 
-        <p>Please enter email.</p> 
+        <br><p>Please enter email.</p> 
       </ion-item>
 
 
@@ -92,8 +92,8 @@
     <ion-item *ngIf="roomDetails.Name">
       <ion-label stacked>Room Name</ion-label>
       <ion-input 
-      type="name" 
-      [formControl]="bookingForm.controls['name']"
+      type="roomName" 
+      [formControl]="bookingForm.controls['roomName']"
       [(ngModel)]="bookings.roomName">{{roomDetails.Name}}</ion-input>
     </ion-item>
 
