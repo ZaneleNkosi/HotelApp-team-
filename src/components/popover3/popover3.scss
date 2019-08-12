@@ -1,6 +1,6 @@
 popover3 {
   .content {
-    background: linear-gradient(rgba(95, 94, 94, 0.555)), url('../../assets/imgs/book.jpg');
+    background: linear-gradient(rgba(95, 94, 94, 0.555)), url('../../assets/imgs/Uzurihotel.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -9,15 +9,13 @@ popover3 {
 
   .container{
     display: flex;
-    flex-flow: column;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 
   .back {
-    position: absolute;
-    top: 0%;
-    left: 0%;
+
 
     .icon {
       color: rgb(170, 135, 60);

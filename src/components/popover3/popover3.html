@@ -1,15 +1,17 @@
 <!-- Generated template for the Popover3Component component -->
 
-<ion-content padding>
+<ion-content no-bounce>
  
     <div class="container">
-      <div class="">
-      <div id="icon">
+      
+      <div class="icon">
         <h1>WELCOME</h1>
         <p>Sign-In to your account <br> to continue </p>
       </div>
-      <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
+
       <div class="npts">
+      <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
+    
         <ion-item>
           <ion-label floating>Email</ion-label>
           <ion-input
@@ -21,8 +23,8 @@
         </ion-item>
 
         <ion-item class="error-message" 
-        *ngIf="!loginForm.controls.email.valid && loginForm.controls.email.touched"> 
-        <p>Please enter a valid email address.</p> 
+        *ngIf="!loginForm.controls.email.valid && loginForm.controls.email.dirty"> 
+        <p style="color: red">Please enter a valid email address.</p> 
       </ion-item>
   
         <ion-item>
@@ -36,29 +38,29 @@
         </ion-item>
 
         <ion-item class="error-message" 
-        *ngIf="!loginForm.controls.password.valid && loginForm.controls.password.touched"> 
-        <p>Your password needs more than 6 characters.</p> 
+        *ngIf="!loginForm.controls.password.valid && loginForm.controls.password.dirty"> 
+        <p style="color: red">Your password needs more than 6 characters.</p> 
       </ion-item>
       
-    </div>
+   
     <div class="btn">
-        <button ion-button full style="margin-top: 25px" (click)="login(user)" class="btns" id="login" type="submit" [disabled]="!loginForm.valid"> Sign In</button>
-
-
-        <p>Don't have an account yet? <span (click)="presentPopover4(myEvent)">Sign up</span></p>
-
-
+        <button ion-button full (click)="login(user)" class="btns" id="login" type="submit" [disabled]="!loginForm.valid"> Sign In</button>
+        <p>Don't have an account yet? <span (click)="presentPopover4(myEvent)" style="color: royalblue">Sign up</span></p>
       </div>
     </form>
-      <button ion-button block clear id="forgot" (click)="goToResetPassword()"> Forgot Password? </button>
-      <div class="close">
+  </div>
+  
+  <button ion-button block clear (click)="goToResetPassword()" style="color: royalblue"> Forgot Password? </button>
+     
+  
+  <div class="close">
         <ion-buttons>
           <button ion-button clear (click)="close()">
             X
           </button>
         </ion-buttons>
-      </div>
-    </div>
+  </div>
+   
     </div>
   </ion-content>
   
