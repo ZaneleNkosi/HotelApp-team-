@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-// import firebase from 'firebase'; 
-// import { User, AuthCredential } from '@firebase/auth-types'; 
-// import { Reference } from '@firebase/database-types';
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/firestore';
 /*
   Generated class for the ProfileProvider provider.
 
@@ -11,48 +11,66 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class ProfileProvider {
-  // public userProfile: Reference; 
-  // public currentUser: User
+  update(arg0: { firstName: string; lastName: string; }): Promise<any> {
+    throw new Error("Method not implemented.");
+  }
+  public userProfile: firebase.firestore.DocumentReference;
+  public currentUser: firebase.User;
+
 
   constructor(public http: HttpClient) {
-    // firebase.auth().onAuthStateChanged( user => { 
-    //   if(user){ 
-    //     this.currentUser = user; 
-    //     this.userProfile = firebase.database().ref(`/userProfile/${user.uid}`); 
-    //   } 
-    // });
-
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+      this.currentUser = user;
+      this.userProfile = firebase.firestore().doc(`/userProfile/${user.uid}`);
+      }
+      });
   }
-  // getUserProfile(): Reference { 
-  //   return this.userProfile; 
-  // }
-
-  // updateName(firstName: string, lastName: string): Promise<any> { 
-  //   return this.userProfile.update({ firstName, lastName }); 
-  // } 
-  // updateDOB(birthDate:string): Promise<any> { 
-  //   return this.userProfile.update({ birthDate }); 
-  // }
-  // updateEmail(newEmail: string, password: string): Promise<any> { 
-  //   const credential: AuthCredential = firebase.auth. EmailAuthProvider.credential( 
-  //     this.currentUser.email, password ); 
-  //     return this.currentUser .reauthenticateWithCredential(credential) .then(user => { 
-  //       this.currentUser.updateEmail(newEmail).then(user => { 
-  //         this.userProfile.update({ email: newEmail }); 
-  //       }); 
-  //     }) .catch(error => { 
-  //       console.error(error); 
-  //     }); 
-  //   }
-  //   updatePassword(newPassword: string, oldPassword: string): Promise<any> { 
-  //     const credential: AuthCredential = firebase.auth .EmailAuthProvider.credential( 
-  //       this.currentUser.email, oldPassword ); 
-  //       return this.currentUser .reauthenticateWithCredential(credential) .then(user => { 
-  //         this.currentUser.updatePassword(newPassword).then(user => { 
-  //           console.log('Password Changed'); 
-  //         }); 
-  //       }) .catch(error => { 
-  //         console.error(error); 
-  //       }); 
-  //     }
+  getUserProfile(): firebase.firestore.DocumentReference {
+    return this.userProfile;
+    }
+    addProfile(firstName: string): Promise<any> {
+      return this.userProfile.set({ firstName});
+      }
+    updateName(firstName: string): Promise<any> {
+      return this.userProfile.update({ firstName});
+      }
+      updateDOB(birthDate: string): Promise<any> {
+        return this.userProfile.update({ birthDate });
+        }
+        updateEmail(newEmail: string, password: string): Promise<any> {
+          const credential: firebase.auth.AuthCredential =
+          firebase.auth.EmailAuthProvider.credential(
+          this.currentUser.email,
+          password
+          );
+          return this.currentUser
+          .reauthenticateWithCredential(credential)
+          .then(() => {
+          this.currentUser.updateEmail(newEmail).then(() => {
+          this.userProfile.update({ email: newEmail });
+          });
+          })
+          .catch(error => {
+          console.error(error);
+          });
+          }
+          updatePassword(newPassword: string, oldPassword: string): Promise<any> {
+            const credential: firebase.auth.AuthCredential =
+            firebase.auth.EmailAuthProvider.credential(
+            this.currentUser.email,
+            oldPassword
+            );
+            return this.currentUser
+            .reauthenticateWithCredential(credential)
+            .then(() => {
+            this.currentUser.updatePassword(newPassword).then(() => {
+            console.log('Password Changed');
+            });
+            })
+            .catch(error => {
+            console.error(error);
+            });
+            }
+            
 }

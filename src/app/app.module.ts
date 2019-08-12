@@ -1,3 +1,4 @@
+import { EditPage } from './../pages/edit/edit';
 import { ResetComponent } from './../components/reset/reset';
 import { ResetpasswordPage } from './../pages/resetpassword/resetpassword';
 import { RegisterPage } from './../pages/register/register';
@@ -39,6 +40,7 @@ import { ProfileProvider } from '../providers/profile/profile';
     ResetpasswordPage,
     RegisterPage,
     LoginPage,
+    EditPage,
     PopoverComponent,
     Popover3Component,
     Popover4Component,
@@ -63,6 +65,7 @@ import { ProfileProvider } from '../providers/profile/profile';
     ListPage,
     BookingPage,
     PaymentPage,
+    EditPage,
     PopoverComponent,
     Popover3Component,
     Popover4Component,

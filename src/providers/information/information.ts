@@ -40,4 +40,7 @@ export class InformationProvider{
   getFavourite(val) {
     this.favourite = val
   }
+  updateBio(){
+    return this.user;
+  }
 }

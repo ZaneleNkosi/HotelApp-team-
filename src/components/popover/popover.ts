@@ -3,6 +3,7 @@ import { NavController, NavParams, ViewController } from 'ionic-angular';
 import * as firebase from 'firebase';
 import { HomePage } from '../../pages/home/home';
 import { InformationProvider } from '../../providers/information/information';
+import { EditPage } from '../../pages/edit/edit';
 
 @Component({
   selector: 'popover',
@@ -19,7 +20,7 @@ export class PopoverComponent {
   }
 
 profile(){
-  this.navCtrl.push('ProfilePage');
+  this.navCtrl.push(EditPage);
 }
 
 logout(){
