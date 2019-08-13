@@ -51,7 +51,7 @@ export class EditPage {
     })
 }
 UpdatePro(){
-  this.db.collection("User Profiles").doc("uid")
+  this.db.collection("User Profiles").doc("data")
     .onSnapshot(function(doc) {
         console.log("Current data: ", doc.data());
     });

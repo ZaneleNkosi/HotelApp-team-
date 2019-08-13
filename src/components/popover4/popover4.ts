@@ -38,13 +38,18 @@ export class Popover4Component {
 }
  
   async register(user: User) {
-    try {
-      const info = await this.fireAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
-      if (info) {
-        this.viewCtrl.dismiss();
+    if(this.signupForm.valid) {
+       this.fireAuth.auth.createUserWithEmailAndPassword(this.signupForm.get('email').value, this.signupForm.get('password').value).then((info) => {
+         
+        this.close()
         this.navCtrl.push('CreateprofilePage');
-      }
-    } catch (e) {
+      
+    }).catch((error) => {
+      console.log('error: ',error);
+      
+    })
+      
+    }else {
       this.toast.create({
         message: "All fields are required! Password MUST be at least 6 characters long.",
         duration: 4000,
