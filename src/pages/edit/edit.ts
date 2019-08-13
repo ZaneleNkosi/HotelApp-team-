@@ -2,7 +2,7 @@ import { ProfileProvider } from './../../providers/profile/profile';
 import { Component } from '@angular/core';
 import { Alert, AlertController, IonicPage, NavController, NavParams } from "ionic-angular"; 
 import { AuthProvider } from "../../providers/auth/auth"; 
-import firebase from 'firebase';
+import * as firebase from 'firebase';
 import { Profile } from '../../model/profile';
 import { InformationProvider } from '../../providers/information/information';
 import { ProfilePage } from '../profile/profile';
@@ -29,8 +29,9 @@ export class EditPage {
   showComp = true;
   profileImage: string;
   firstName?: string;
-  users
- userProfile = {}
+  
+ userProfile = {};
+ 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -50,12 +51,14 @@ export class EditPage {
       
     })
 }
-UpdatePro(){
-  this.db.collection("User Profiles").doc("data")
-    .onSnapshot(function(doc) {
-        console.log("Current data: ", doc.data());
-    });
+
+UpdatePro(userprofile){
+console.log(userprofile);
+  this.db.collection("User Profiles").doc(this.authProvider.getuser()).update(userprofile).then((ref) => {
+   
+    console.log("This is the ref =",ref)
 
   this.navCtrl.push(ProfilePage)
-}
+})}
+
 }
