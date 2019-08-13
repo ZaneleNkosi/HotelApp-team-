@@ -14,16 +14,27 @@
   <ion-list>
     <ion-list-header> Personal Information </ion-list-header>
   </ion-list>
-  <ion-item (click)="updateName()">
+  <ion-item >
     <ion-label>
       <ion-grid>
         <ion-row>
           <ion-col class="text-left" size="5"> Name </ion-col>
-          <ion-col class="text-center" size="7" *ngIf="userProfile?.firstName" >
-            {{userProfile?.firstname}} 
+          <input type="text" [(ngModel)]="userProfile.firstname">
+          <ion-col size="7" class="placeholder-profile text-center" *ngIf="!userProfile?.firstName">         
           </ion-col>
-          <ion-col size="7" class="placeholder-profile text-center" *ngIf="!userProfile?.firstName">
-            <span> Tap here to edit. </span>
+        </ion-row>
+      </ion-grid>
+    </ion-label>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="text-left" size="5"> Email </ion-col>
+          <input type="text" [(ngModel)]="userProfile.email">
+          <ion-col size="7" class="placeholder-profile text-center" *ngIf="!userProfile?.email">
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -31,64 +42,34 @@
   </ion-item>
 
   <ion-item>
-    <ion-label class="dob-label">Date of Birth</ion-label>
-    <ion-datetime displayFormat="MMM D, YYYY" pickerFormat="D MMM YYYY" [(ngModel)]="birthDate"
-      (ionChange)="updateDOB(birthDate)">
-    </ion-datetime>
-  </ion-item>
-
-  <ion-item (click)="updateEmail()">
-    <ion-label>
-      <ion-grid>
-        <ion-row>
-          <ion-col class="text-left" size="5"> Email </ion-col>
-          <ion-col class="text-center" size="7" *ngIf="userProfile?.email">
-            {{displayProfile.email}}
-          </ion-col>
-          <ion-col size="7" class="placeholder-profile text-center" *ngIf="!userProfile?.email">
-            <span> Tap here to edit. </span>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-label>
-  </ion-item>
-
-  <ion-item (click)="updatePassword()">
-    <ion-label>
-      <ion-grid>
-        <ion-row>
-          <ion-col class="text-left" size="5"> Password </ion-col>
-          <ion-col class="text-center" size="7" class="placeholder-profile">
-            <span> Tap here to edit. </span>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-label>
-  </ion-item>
-
-  <ion-item (click)="updatePhone()">
     <ion-label>
       <ion-grid>
         <ion-row>
           <ion-col class="text-left" size="5"> Phone </ion-col>
+          <input type="text" [(ngModel)]="userProfile.phone">
           <ion-col class="text-center" size="7" class="placeholder-profile">
-            <span> Tap here to edit. </span>
           </ion-col>
         </ion-row>
       </ion-grid>
     </ion-label>
   </ion-item>
 
-  <ion-item (click)="updateBio()">
+  <ion-item>
     <ion-label>
       <ion-grid>
         <ion-row>
           <ion-col class="text-left" size="5"> Bio </ion-col>
+          <input type="text" [(ngModel)]="userProfile.Bio">
           <ion-col class="text-center" size="7" class="placeholder-profile">
-            <span> Tap here to edit. </span>
           </ion-col>
         </ion-row>
       </ion-grid>
     </ion-label>
   </ion-item>
+
+  <div class="btn">
+    <button ion-button full color="dark" (click)="UpdatePro()">Save</button>
+  </div>
+
+ 
 </ion-content>

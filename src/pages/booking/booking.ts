@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, Loading } from 'ionic-angular';
 import * as firebase from 'firebase';
 import { Booking } from '../../model/user';
-import { AngularFireAuth } from 'angularfire2/auth';
 import { InformationProvider } from '../../providers/information/information';
 import { FormGroup, Validators, FormBuilder,FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { EmailValidator } from '../../Validators/email';
@@ -23,9 +22,6 @@ export class BookingPage {
   
   bookings =
     {
-      name: "",
-      email: "",
-      phone: '',
       date1: "",
       date2: "",
       adults: 0,
@@ -53,11 +49,9 @@ export class BookingPage {
     private FormsModule: FormsModule,
     private ReactiveFormsModule: ReactiveFormsModule,) {
       
-      this.bookingForm = formBuilder.group({ 
-    email: [ '', Validators.compose([Validators.required, EmailValidator.isValid]) ], 
-    name: [ '', Validators.compose([Validators.required])], 
-    tel: [ '', Validators.compose([Validators.required,Validators.minLength(10), Validators.maxLength(10)]) ], 
-    date: [ '', Validators.compose([Validators.required]) ], 
+      this.bookingForm = formBuilder.group({  
+    date1: [ '', Validators.compose([Validators.required]) ],
+    date2: [ '', Validators.compose([Validators.required]) ], 
     number: [ '', Validators.compose([Validators.required]) ], 
     roomName: [ '', Validators.compose([Validators.required])], 
    
@@ -88,6 +82,8 @@ export class BookingPage {
       content: 'Loading'
     });
     load.present();
+   
+
     let date = new Date();
     let start = new Date(this.bookings.date1);
     let end = new Date(this.bookings.date2);
@@ -109,6 +105,8 @@ export class BookingPage {
       this.navCtrl.push('ModalPage')
       load.dismiss();
     });
+
+    
   }
 
   retrieveData() {
@@ -127,9 +125,7 @@ export class BookingPage {
       if (querySnapshot.empty !== true) {
         console.log('Got data', querySnapshot);
         querySnapshot.forEach(doc => {
-          this.bookings.name = doc.data().firstname;
-          this.bookings.email = doc.data().email;
-          this.bookings.phone = doc.data().phone;
+          
 
 
           console.log('Profile Document: ', this.displayProfile)

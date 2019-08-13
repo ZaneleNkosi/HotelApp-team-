@@ -21,8 +21,8 @@
       </ion-item>
 
       <ion-item class="error-message" 
-      *ngIf="!signupForm.controls.email.valid && signupForm.controls.email.touched"> 
-      <p>Please enter a valid email address.</p> 
+      *ngIf="!signupForm.controls.email.valid && signupForm.controls.email.dirty"> 
+      <p  style="color: red">Please enter a valid email address.</p> 
     </ion-item>
 
       <ion-item>
@@ -36,8 +36,8 @@
       </ion-item>
 
       <ion-item class="error-message" 
-      *ngIf="!signupForm.controls.password.valid && signupForm.controls.password.touched"> 
-      <p>Your password needs more than 6 characters.</p> 
+      *ngIf="!signupForm.controls.password.valid && signupForm.controls.password.dirty"> 
+      <p  style="color: red">Your password needs more than 6 characters.</p> 
     </ion-item>
 
     </div>

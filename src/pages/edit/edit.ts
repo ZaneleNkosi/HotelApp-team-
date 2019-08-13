@@ -4,6 +4,8 @@ import { Alert, AlertController, IonicPage, NavController, NavParams } from "ion
 import { AuthProvider } from "../../providers/auth/auth"; 
 import firebase from 'firebase';
 import { Profile } from '../../model/profile';
+import { InformationProvider } from '../../providers/information/information';
+import { ProfilePage } from '../profile/profile';
 
 /**
  * Generated class for the EditPage page.
@@ -18,7 +20,6 @@ import { Profile } from '../../model/profile';
   templateUrl: 'edit.html',
 })
 export class EditPage {
-  public userProfile: any; 
   public birthDate: string;
   db = firebase.firestore();
   storage = firebase.storage().ref();
@@ -29,119 +30,32 @@ export class EditPage {
   profileImage: string;
   firstName?: string;
   users
- 
+ userProfile = {}
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public alertCtrl: AlertController, 
     public authProvider: AuthProvider, 
-    public profileProvider: ProfileProvider 
-    ) {
-  }
+    public profileProvider: ProfileProvider ,
+    private infoProv: InformationProvider
+    ) {}
 
   ionViewDidLoad() {
-  
-}
-  updateName(): void { 
-      let alert: Alert = this.alertCtrl.create({ 
-      message: "Your first name & last name", 
-      inputs: [ { 
-        name: "firstName", placeholder: "Your first name", 
-      }], 
-    buttons: [ { 
-      text: "Cancel" 
-    }, { 
-      text: "Save", 
-      handler: data => { 
-        this.profileProvider.updateName(data.firstname); 
-      } 
-    } 
-  ] 
-}); 
-alert.present(); 
-  }
-
-  updateEmail(): void { 
-    let alert: Alert = this.alertCtrl.create({ 
-      inputs: [{ 
-        name: 'newEmail', placeholder: 'Your new email' }, 
-        { 
-          name: 'password', 
-          placeholder: 'Your password', 
-          type: 'password' 
-        }], buttons: [ { 
-          text: 'Cancel' 
-        }, { 
-          text: 'Save', 
-          handler: data => { 
-            this.profileProvider .updateEmail(data.newEmail, data.password) .then(() => { 
-              console.log('Email Changed Successfully'); 
-            }) .catch(error => { 
-              console.log('ERROR: ' + error.message); 
-            }); 
-          }}] 
-        }); alert.present(); 
-      } 
-      updatePassword(): void { 
-        let alert: Alert = this.alertCtrl.create({ 
-          inputs: [{ 
-            name: 'newPassword', 
-            placeholder: 'New password', 
-            type: 'password' 
-          }, { 
-            name: 'oldPassword', 
-            placeholder: 'Old password', 
-            type: 'password' 
-          }], buttons: [{ 
-            text: 'Cancel' }, { 
-              text: 'Save', handler: data => { 
-                this.profileProvider.updatePassword( data.newPassword, data.oldPassword ); 
-              } 
-            } 
-          ] 
-        }); alert.present();
-      }
-
-      updateBio(): void { 
-        let alert: Alert = this.alertCtrl.create({ 
-          inputs: [{ 
-            name: 'newPassword', 
-            placeholder: 'New password', 
-            type: 'password' 
-          }, { 
-            name: 'oldPassword', 
-            placeholder: 'Old password', 
-            type: 'password' 
-          }], buttons: [{ 
-            text: 'Cancel' }, { 
-              text: 'Save', handler: data => { 
-                this.profileProvider.updatePassword( data.newPassword, data.oldPassword ); 
-              } 
-            } 
-          ] 
-        }); alert.present();
-      }
-      updatePhone(): void { 
-        let alert: Alert = this.alertCtrl.create({ 
-          inputs: [{ 
-            name: 'newPassword', 
-            placeholder: 'New password', 
-            type: 'password' 
-          }, { 
-            name: 'oldPassword', 
-            placeholder: 'Old password', 
-            type: 'password' 
-          }], buttons: [{ 
-            text: 'Cancel' }, { 
-              text: 'Save', handler: data => { 
-                this.profileProvider.updatePassword( data.newPassword, data.oldPassword ); 
-              } 
-            } 
-          ] 
-        }); alert.present();
-      }
-     
-        
+    this.db.collection('User Profiles').where('uid', '==', this.infoProv.returnUser().uid).get().then(snapshot => {
+      snapshot.forEach(doc => {
+        this.userProfile = doc.data();
+      })
+      console.log(this.userProfile);
       
-        
+      
+    })
+}
+UpdatePro(){
+  this.db.collection("User Profiles").doc("uid")
+    .onSnapshot(function(doc) {
+        console.log("Current data: ", doc.data());
+    });
+
+  this.navCtrl.push(ProfilePage)
+}
 }

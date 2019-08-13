@@ -8,7 +8,7 @@
   <form [formGroup]="bookingForm">
 
   <div class="inputs">
-    <ion-item>
+    <!-- <ion-item>
       <ion-label stacked>Full Name</ion-label>
       <ion-input 
       type="name" 
@@ -26,7 +26,7 @@
     </ion-item>
 
     <ion-item class="error-message" 
-        *ngIf="!bookingForm.controls.email.valid && bookingForm.controls.email.touched"> 
+        *ngIf="!bookingForm.controls.email.valid && bookingForm.controls.email.dirty"> 
         <br><p>Please enter email.</p> 
       </ion-item>
 
@@ -41,31 +41,27 @@
     </ion-item>
 
     <ion-item class="error-message" 
-        *ngIf="!bookingForm.controls.tel.valid && bookingForm.controls.tel.touched"> 
+        *ngIf="!bookingForm.controls.tel.valid && bookingForm.controls.tel.dirty"> 
         <p>10 Digits only.</p> 
-      </ion-item>
+      </ion-item> -->
 
     <div class="dates">
       <ion-item>
         <ion-label stacked>Check-In</ion-label>
         <ion-input 
         type="date" 
-        [class.invalid]="!bookingForm.controls.date.valid && blur"
+        [class.invalid]="!bookingForm.controls.date1.valid && blur"
         [(ngModel)]="bookings.date1"
-        [formControl]="bookingForm.controls['date']"></ion-input>
+        [formControl]="bookingForm.controls['date1']"></ion-input>
       </ion-item>
 
-      <ion-item class="error-message" 
-      *ngIf="!bookingForm.controls.date.valid && bookingForm.controls.date.touched"><br>
-      <p>Past Date invalid.</p> 
-    </ion-item>
 
       <ion-item>
         <ion-label stacked>Check-Out</ion-label>
         <ion-input 
         type="date" 
         [(ngModel)]="bookings.date2"
-        [formControl]="bookingForm.controls['date']"></ion-input>
+        [formControl]="bookingForm.controls['date2']"></ion-input>
       </ion-item>
     </div>
 

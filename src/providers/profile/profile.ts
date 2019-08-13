@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
+import { InformationProvider } from '../information/information';
 /*
   Generated class for the ProfileProvider provider.
 
@@ -18,7 +19,7 @@ export class ProfileProvider {
   public currentUser: firebase.User;
 
 
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient, private infoProv: InformationProvider) {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
       this.currentUser = user;
@@ -33,7 +34,7 @@ export class ProfileProvider {
       return this.userProfile.set({ firstName});
       }
     updateName(firstName: string): Promise<any> {
-      return this.userProfile.update({ firstName});
+      return this.userProfile.update({firstName});
       }
       updateDOB(birthDate: string): Promise<any> {
         return this.userProfile.update({ birthDate });
