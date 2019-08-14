@@ -62,7 +62,7 @@ export class BookingPage {
     console.log('ionViewDidLoad BookingPage');
     console.log('Price#: ', this.navParams.data.Price);
     console.log('Name: ', this.navParams.data.Name);
-
+    
     this.price = this.navParams.data.Price;
     this.roomDetails = this.navParams.data;
     this.bookings.roomName = this.navParams.data.Name;

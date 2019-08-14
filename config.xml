@@ -3,7 +3,7 @@
     <name>FirebaseApp</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework.com" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://192.168.1.19:8100" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -106,4 +106,5 @@
     <allow-navigation href="http://192.168.1.19:8101" sessionid="c2a4bafd" />
     <allow-navigation href="http://192.168.1.19:8102" sessionid="2ec0b8f0" />
     <allow-navigation href="http://192.168.1.19:8103" sessionid="ca4d7683" />
+    <allow-navigation href="http://192.168.1.19:8100" sessionid="04c1acf9" />
 </widget>

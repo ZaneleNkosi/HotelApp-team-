@@ -39,7 +39,9 @@ export class EditPage {
     public authProvider: AuthProvider, 
     public profileProvider: ProfileProvider ,
     private infoProv: InformationProvider
-    ) {}
+    ) {
+      
+    }
 
   ionViewDidLoad() {
     this.db.collection('User Profiles').where('uid', '==', this.infoProv.returnUser().uid).get().then(snapshot => {
