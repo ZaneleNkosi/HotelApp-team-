@@ -30,11 +30,28 @@ page-profile {
         display: flex;
         flex-flow: row;
         justify-content: space-between;
-        .back1{
-          position: relative;
-          right: -350px;
+
+        .back1 {
+          position: absolute;
+          left: 95px;
+          top: 60px;
+          border: 3px solid white;
+          border-radius: 50%;
+          text-align: center;
+          width: 40px;
+          height: 40px;
+
+          .icon {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            padding: 5px;
+            font-size: 25px;
+            background: rgba(170, 135, 60, 0.712);
+            border-radius: 50%;
+          }
         }
-     
+
       }
 
       img {
@@ -44,7 +61,7 @@ page-profile {
         width: 100%;
         object-fit: cover;
         opacity: 0.5;
-     
+
       }
     }
 
@@ -57,7 +74,7 @@ page-profile {
       justify-content: center;
       align-items: center;
       position: relative;
-      bottom: 95%;
+      bottom: 90%;
 
       img {
         height: 250px;
@@ -78,7 +95,7 @@ page-profile {
     height: 60vh;
     z-index: 5;
     position: relative;
-    bottom: 190px;
+    bottom: 185px;
     text-align: center;
 
 
@@ -124,7 +141,7 @@ page-profile {
       flex-flow: row;
       justify-content: space-evenly;
       padding: 10px;
-     
+
       .roomname {
         flex-grow: 1;
         color: black;
@@ -140,19 +157,22 @@ page-profile {
         font-size: 15px;
         display: flex;
         flex-flow: column;
-       .dates{
-        display: flex;
-        flex-flow: row;
-        justify-content: space-evenly;
-        span{
-          color: black;
-          font-weight: bold;
+
+        .dates {
+          display: flex;
+          flex-flow: row;
+          justify-content: space-evenly;
+
+          span {
+            color: black;
+            font-weight: bold;
+          }
         }
-       }
-       #days{
-         position: relative;
-         bottom: 30px;
-       }
+
+        #days {
+          position: relative;
+          bottom: 30px;
+        }
       }
     }
   }
