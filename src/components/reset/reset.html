@@ -2,9 +2,9 @@
 
 
 
-  <div class="middle">
+ 
   <form [formGroup]="resetPasswordForm" (submit)="resetPassword()" novalidate> 
-    <ion-item style="background-color: transparent" color=" white"> 
+    <ion-item style="background-color: transparent"> 
       <ion-label stacked>Email</ion-label> 
       <ion-input formControlName="email" type="email" placeholder="Your email address" [class.invalid]="!resetPasswordForm.controls.email.valid && blur"> 
       </ion-input> 
@@ -14,5 +14,5 @@
       </ion-item> 
       <button ion-button style="color: rgb(109, 72, 41)" block type="submit" [disabled]="!resetPasswordForm.valid"> Reset your Password </button> 
     </form> 
-  </div>
+
   </ion-content>

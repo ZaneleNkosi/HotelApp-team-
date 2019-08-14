@@ -6,6 +6,7 @@ import * as firebase from 'firebase';
 import { Profile } from '../../model/profile';
 import { InformationProvider } from '../../providers/information/information';
 import { ProfilePage } from '../profile/profile';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 
 /**
  * Generated class for the EditPage page.
@@ -38,7 +39,8 @@ export class EditPage {
     public alertCtrl: AlertController, 
     public authProvider: AuthProvider, 
     public profileProvider: ProfileProvider ,
-    private infoProv: InformationProvider
+    private infoProv: InformationProvider,
+    public camera: Camera,
     ) {
       
     }
@@ -52,6 +54,22 @@ export class EditPage {
       
       
     })
+}
+
+async selectImage() {
+  const option: CameraOptions = {
+    destinationType: this.camera.DestinationType.DATA_URL,
+    encodingType: this.camera.EncodingType.JPEG,
+    mediaType: this.camera.MediaType.PICTURE,
+    sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
+    quality: 100
+  }
+  await this.camera.getPicture(option).then(res => {
+    console.log('popover2', res);
+
+    let base64image = `data:image/jpeg;base64,${res}`;
+    this.profileImage = base64image;
+  })
 }
 
 UpdatePro(userprofile){
