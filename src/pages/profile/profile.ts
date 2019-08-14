@@ -122,7 +122,7 @@ export class ProfilePage {
     }).catch((error)=> {
     });
   }
-
+    
   retrieveBooking() {
 
     let users = this.db.collection('bookings');
