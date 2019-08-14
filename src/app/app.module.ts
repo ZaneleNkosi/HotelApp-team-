@@ -1,6 +1,5 @@
 import { EditPage } from './../pages/edit/edit';
 import { ResetComponent } from './../components/reset/reset';
-import { ResetpasswordPage } from './../pages/resetpassword/resetpassword';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -34,7 +33,7 @@ import { ListPage } from '../pages/list/list';
     HomePage,
     BookingPage,
     PaymentPage,
-    ResetpasswordPage,
+  
     EditPage,
     ListPage ,
     PopoverComponent,

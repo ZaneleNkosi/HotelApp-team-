@@ -6,7 +6,7 @@ import { AuthProvider } from '../../providers/auth/auth'
 import { IonicPage, NavController, NavParams, ToastController, ViewController, PopoverController, AlertController, LoadingController, Loading, Alert  } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { HomePage } from '../../pages/home/home';
-import { Popover4Component} from '../../components/popover4/popover4';
+
 import { InformationProvider } from '../../providers/information/information';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -90,13 +90,13 @@ close() {
  this.viewCtrl.dismiss();
 }
 
-// presentPopover4(myEvent) {
-//  this.viewCtrl.dismiss();
-//  const popover = this.popoverCtrl.create(Popover4Component);
-//  popover.present({
-//    ev: myEvent 
-//  });
-// }
+presentReset(myEvent) {
+ this.viewCtrl.dismiss();
+ const popover = this.popoverCtrl.create(ResetComponent);
+ popover.present({
+   ev: myEvent 
+ });
+}
 
 loginUser(): void { 
  if (!this.loginForm.valid) { 
