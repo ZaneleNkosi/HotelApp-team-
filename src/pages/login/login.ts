@@ -90,13 +90,14 @@ close() {
  this.viewCtrl.dismiss();
 }
 
-presentPopover4(myEvent) {
- this.viewCtrl.dismiss();
- const popover = this.popoverCtrl.create(Popover4Component);
- popover.present({
-   ev: myEvent 
- });
-}
+// presentPopover4(myEvent) {
+//  this.viewCtrl.dismiss();
+//  const popover = this.popoverCtrl.create(Popover4Component);
+//  popover.present({
+//    ev: myEvent 
+//  });
+// }
+
 loginUser(): void { 
  if (!this.loginForm.valid) { 
    console.log( `Form is not valid yet, current value: ${this.loginForm.value}` 
@@ -123,7 +124,9 @@ loginUser(): void {
      
    }
    goToResetPassword():void { 
-          this.navCtrl.push(ResetComponent); 
+      this.navCtrl.push(ResetComponent); 
     }
+
+    
 
 }

@@ -71,7 +71,7 @@ export class PaymentPage {
     this.db.collection("payments").doc(this.users).set(this.payments)
     this.navCtrl.push('ConfirmpaymentPage');
 
-  }
+  } 
 
   
 
