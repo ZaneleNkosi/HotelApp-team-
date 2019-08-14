@@ -5,6 +5,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { InformationProvider } from '../../providers/information/information';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormsModule, Validator } from '@angular/forms';
+import { ListPage } from '../list/list';
 // import { EmailValidator } from '../../Validators/email';
 /**
  * Generated class for the PaymentPage page.
