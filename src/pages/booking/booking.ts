@@ -8,10 +8,8 @@ import { EmailValidator } from '../../Validators/email';
 
 @IonicPage()
 @Component({
-
   selector: 'page-booking',
   templateUrl: 'booking.html',
-
 })
 
 export class BookingPage {
@@ -22,6 +20,9 @@ export class BookingPage {
   
   bookings =
     {
+      name: "",
+      phone: '',
+      email: '',
       date1: "",
       date2: "",
       adults: 0,
@@ -77,13 +78,11 @@ export class BookingPage {
   createBooking() {
 
     let users = this.db.collection('User Profiles');
-
     let load = this.loadingCtrl.create({
       content: 'Loading'
     });
     load.present();
    
-
     let date = new Date();
     let start = new Date(this.bookings.date1);
     let end = new Date(this.bookings.date2);
@@ -97,16 +96,11 @@ export class BookingPage {
     } else
       this.bookings.amount = this.bookings.nodays * this.price
 
-    // this.afAuth.authState.take(1).subscribe(auth => {
-    //   this.afDatabase.object(`bookings/${auth.uid}`).set(this.bookings)
-    //     .then(() => this.navCtrl.push('ModalPage'))
-    // })
     this.db.collection('bookings').doc(this.bookings.roomName + this.infoProvider.returnUser().uid).set(this.bookings).then(() => {
+    
       this.navCtrl.push('ModalPage')
       load.dismiss();
     });
-
-    
   }
 
   retrieveData() {
@@ -126,7 +120,12 @@ export class BookingPage {
         console.log('Got data', querySnapshot);
         querySnapshot.forEach(doc => {
           
-          console.log('Profile Document: ', this.displayProfile)
+          console.log('Profile Document: ', doc.data())
+          this.bookings.name = doc.data().firstname
+          this.bookings.phone = doc.data().phone
+          this.bookings.email = doc.data().email
+          console.log('booking dataaaaa ', this.bookings);
+          
         })
       } else {
         console.log('No data');

@@ -3,10 +3,9 @@ import { IonicPage, NavController, NavParams, ModalController, AlertController, 
 import * as firebase from 'firebase';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { ListPage } from '../list/list';
 import { InformationProvider } from '../../providers/information/information';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormsModule, Validator } from '@angular/forms';
-import { EmailValidator } from '../../Validators/email';
+// import { EmailValidator } from '../../Validators/email';
 /**
  * Generated class for the PaymentPage page.
  *
@@ -67,22 +66,22 @@ export class PaymentPage {
     })
   }
 
-  showConfirm() {
-    const confirm = this.alertCtrl.create({
-      title: 'Confirmed',
-      message: 'Your Booking has been Confirmed',
-      buttons: [
-        {
-          text: 'Ok',
-          handler: () => {
-            this.navCtrl.setRoot(ListPage)
-            console.log('Ok clicked');
-          }
-        }
-      ]
-    });
-    confirm.present();
-  }
+  // showConfirm() {
+  //   const confirm = this.alertCtrl.create({
+  //     title: 'Confirmed',
+  //     message: 'Your Booking has been Confirmed',
+  //     buttons: [
+  //       {
+  //         text: 'Ok',
+  //         handler: () => {
+  //           this.navCtrl.setRoot(ListPage)
+  //           console.log('Ok clicked');
+  //         }
+  //       }
+  //     ]
+  //   });
+  //   confirm.present();
+  // }
 
 
 }

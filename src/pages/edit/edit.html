@@ -1,19 +1,12 @@
-<!--
-  Generated template for the EditPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-  <ion-navbar>
-    <ion-title>edit</ion-title>
-  </ion-navbar>
-</ion-header>
 
 <ion-content padding>
   <ion-list>
-    <ion-list-header> Personal Information </ion-list-header>
+    <ion-list-header> Edit Your Profile</ion-list-header>
   </ion-list>
+
+  <div class="image" (click)="selectImage()">
+      <img src="{{profileImage}}">
+  </div>
   <ion-item >
     <ion-label>
       <ion-grid>
@@ -34,7 +27,7 @@
         <ion-row>
           <ion-col class="text-left" size="5"> Email </ion-col>
           <input type="text" [(ngModel)]="userProfile.email">
-          <ion-col size="7" class="placeholder-profile text-center" *ngIf="!userProfile?.email">
+          <ion-col size="7" class="placeholder-profile" class="text-center" *ngIf="!userProfile?.email">
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -59,7 +52,7 @@
       <ion-grid>
         <ion-row>
           <ion-col class="text-left" size="5"> Bio </ion-col>
-          <input type="text" [(ngModel)]="userProfile.Bio">
+          <input type="textarea" [(ngModel)]="userProfile.Bio">
           <ion-col class="text-center" size="7" class="placeholder-profile">
           </ion-col>
         </ion-row>
@@ -69,6 +62,7 @@
 
   <div class="btn">
     <button ion-button full color="dark" (click)="UpdatePro(userProfile)">Save</button>
+    <button ion-button full id="cancel" (click)="cancel()">Cancel</button>
   </div>
 
  

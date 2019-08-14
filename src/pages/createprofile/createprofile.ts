@@ -8,6 +8,7 @@ import { InformationProvider } from '../../providers/information/information';
 import { ListPage } from '../list/list';
 
 
+
 @IonicPage()
 @Component({
   selector: 'page-createprofile',

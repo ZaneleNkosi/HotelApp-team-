@@ -28,18 +28,18 @@ export class HomePage {
   this.navCtrl.push('RegisterPage');
  }
 
- async presentPopover(myEvent) {
-  const popover = await this.popoverCtrl.create(Popover3Component);
-  popover.present({
-    ev: myEvent 
-  });
-}
+//  async presentPopover(myEvent) {
+//   const popover = await this.popoverCtrl.create(Popover3Component);
+//   popover.present({
+//     ev: myEvent 
+//   });
+// }
 
-presentPopover4(myEvent) {
-  const popover = this.popoverCtrl.create(Popover4Component);
-  popover.present({
-    ev: myEvent 
-  });
-}
+// presentPopover4(myEvent) {
+//   const popover = this.popoverCtrl.create(Popover4Component);
+//   popover.present({
+//     ev: myEvent 
+//   });
+// }
 
 }

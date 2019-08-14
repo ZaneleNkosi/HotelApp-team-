@@ -10,7 +10,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { BookingPage } from '../pages/booking/booking';
 import { PaymentPage } from '../pages/payment/payment';
 
@@ -27,17 +26,17 @@ import { HttpModule } from '@angular/http';
 import { Camera } from "@ionic-native/camera";
 import { AuthProvider } from '../providers/auth/auth';
 import { ProfileProvider } from '../providers/profile/profile';
-
+import { ListPage } from '../pages/list/list';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
     BookingPage,
     PaymentPage,
     ResetpasswordPage,
     EditPage,
+    ListPage ,
     PopoverComponent,
     Popover3Component,
     Popover4Component,
@@ -59,10 +58,10 @@ import { ProfileProvider } from '../providers/profile/profile';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
     BookingPage,
     PaymentPage,
     EditPage,
+    ListPage, 
     PopoverComponent,
     Popover3Component,
     Popover4Component,

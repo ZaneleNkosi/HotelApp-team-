@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { IonicPage, PopoverController, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { Profile } from '../../model/profile';
 import * as firebase from 'firebase';
-import { ListPage } from '../../pages/list/list';
 import { InformationProvider } from '../../providers/information/information';
 import { PopoverComponent} from '../../components/popover/popover';
 import { EditPage } from '../edit/edit';
+import { HomePage } from '../home/home';
+import { ListPage } from '../list/list';
 @IonicPage()
 @Component({
   selector: 'page-profile',
@@ -111,6 +112,15 @@ export class ProfilePage {
       console.error("Error removing document: ", error);
     });
 
+  }
+
+  logout(){
+    firebase.auth().signOut().then(() => {
+      console.log('User logged out');
+      this.infoProvider.getUser(null);
+      this.navCtrl.push(HomePage);
+    }).catch((error)=> {
+    });
   }
 
   retrieveBooking() {
