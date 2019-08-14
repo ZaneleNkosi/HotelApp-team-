@@ -122,15 +122,13 @@ page-profile {
     .history {
       display: flex;
       flex-flow: row;
-      justify-content: space-between;
+      justify-content: space-evenly;
       padding: 10px;
-      
-
+     
       .roomname {
         flex-grow: 1;
         color: black;
-        border-radius: 50%;
-        font-size: 25px;
+        font-size: 20px;
 
         .rname {
           font-family: 'Pacifico';
