@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController, AlertController, Loading } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, AlertController, Loading, LoadingController } from 'ionic-angular';
 import * as firebase from 'firebase';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -43,6 +43,8 @@ export class PaymentPage {
     formBuilder: FormBuilder,
     private FormsModule: FormsModule,
     private ReactiveFormsModule: ReactiveFormsModule,
+    public loadingCtrl: LoadingController,
+   
     ) {
       this.credentialsForm = formBuilder.group({ 
         account: [ '', Validators.compose([Validators.required, Validators.minLength(16), Validators.maxLength(16)]) ], 
@@ -54,7 +56,11 @@ export class PaymentPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad BookingPage');
+    const loader = this.loadingCtrl.create({
+      content: "Please wait...",
+      duration: 3000
+    });
+    loader.present();
     this.users = this.infoProvider.user.uid;
   }
   createPayment() {
@@ -62,10 +68,12 @@ export class PaymentPage {
     // const myModal = this.modal.create('ModalPage');
     // myModal.present();
 
-    this.db.collection("payments").doc(this.users).set(this.payments).then(() => {
+    this.db.collection("payments").doc(this.users).set(this.payments)
     this.navCtrl.push('ConfirmpaymentPage');
-    })
+
   }
+
+  
 
   showConfirm() {
     const confirm = this.alertCtrl.create({
