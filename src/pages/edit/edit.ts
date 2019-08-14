@@ -39,7 +39,9 @@ export class EditPage {
     public alertCtrl: AlertController, 
     public authProvider: AuthProvider, 
     public profileProvider: ProfileProvider ,
-    private infoProv: InformationProvider
+    private infoProv: InformationProvider,
+    public loadingCtrl: LoadingController,
+    public camera: Camera
     ) {
       
     }
