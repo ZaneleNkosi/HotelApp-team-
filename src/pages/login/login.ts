@@ -6,12 +6,12 @@ import { AuthProvider } from '../../providers/auth/auth'
 import { IonicPage, NavController, NavParams, ToastController, ViewController, PopoverController, AlertController, LoadingController, Loading, Alert  } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { HomePage } from '../../pages/home/home';
-import { ListPage } from '../../pages/list/list';
 import { Popover4Component} from '../../components/popover4/popover4';
 import { InformationProvider } from '../../providers/information/information';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ResetComponent } from '../../components/reset/reset';
+import { ListPage } from '../list/list';
 
 /**
  * Generated class for the LoginPage page.
@@ -65,7 +65,7 @@ export class LoginPage {
        console.log('Response from pop3: ', res);
        this.infoProv.getUser(res);
        this.viewCtrl.dismiss();
-      this.navCtrl.push(ListPage);
+      this.navCtrl.push('ListPage');
       
    }
    }).catch( err => {
@@ -90,13 +90,14 @@ close() {
  this.viewCtrl.dismiss();
 }
 
-presentPopover4(myEvent) {
- this.viewCtrl.dismiss();
- const popover = this.popoverCtrl.create(Popover4Component);
- popover.present({
-   ev: myEvent 
- });
-}
+// presentPopover4(myEvent) {
+//  this.viewCtrl.dismiss();
+//  const popover = this.popoverCtrl.create(Popover4Component);
+//  popover.present({
+//    ev: myEvent 
+//  });
+// }
+
 loginUser(): void { 
  if (!this.loginForm.valid) { 
    console.log( `Form is not valid yet, current value: ${this.loginForm.value}` 
@@ -106,7 +107,7 @@ loginUser(): void {
    const password = this.loginForm.value.password; 
    this.authProvider.loginUser(email, password).then( authData => { 
      this.loading.dismiss().then(() => {
-        this.navCtrl.setRoot('ListPage'); 
+        this.navCtrl.setRoot(ListPage); 
        }); 
      }, error => { 
        this.loading.dismiss().then(() => {
@@ -123,7 +124,9 @@ loginUser(): void {
      
    }
    goToResetPassword():void { 
-          this.navCtrl.push(ResetComponent); 
+      this.navCtrl.push(ResetComponent); 
     }
+
+    
 
 }

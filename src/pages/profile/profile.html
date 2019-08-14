@@ -1,4 +1,4 @@
-<ion-content padding>
+<ion-content>
 
 
   <div class="container">
@@ -13,14 +13,9 @@
             <div class="back" (click)="gotolist()">
                 <ion-icon name="arrow-back"></ion-icon>
             </div>
-            
-            <button ion-button full color="light" (click)="profile()">
-              Edit Profile
-            </button>
-
-            <div class="back1" (click)= "presentPopover(myEvent)">
-                <ion-icon ios="ios-create" md="md-create"></ion-icon>
-
+      
+            <div class="back1" (click)= "logout()">
+                <ion-icon name="exit"></ion-icon>
             </div>
            
           </div>
@@ -29,6 +24,9 @@
 
         <div class="upload2">
             <img src="{{displayProfile.image}}">
+            <div class="back1" (click)= "profile()">
+                <ion-icon ios="ios-create" md="md-create"></ion-icon>
+            </div>
         </div>
       </div>
 
@@ -56,8 +54,8 @@
             </div>
             <div class="extras">
               <div class="dates">
-                  <p><span>Check-In:</span> {{n.date1}}</p> &nbsp;
-                  <p><span>Check-Out:</span> {{n.date2}}</p>
+                  <p><span>Check-In:</span> {{n.date1}}</p><br>
+                  <p id="d2"><span>Check-Out:</span> {{n.date2}}</p>
               </div>
               <p id="days">Days at the hotel: {{n.nodays}}</p>
               <hr>

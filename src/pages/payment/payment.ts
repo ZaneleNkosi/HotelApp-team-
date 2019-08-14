@@ -3,10 +3,10 @@ import { IonicPage, NavController, NavParams, ModalController, AlertController, 
 import * as firebase from 'firebase';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { ListPage } from '../list/list';
 import { InformationProvider } from '../../providers/information/information';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormsModule, Validator } from '@angular/forms';
-import { EmailValidator } from '../../Validators/email';
+import { ListPage } from '../list/list';
+// import { EmailValidator } from '../../Validators/email';
 /**
  * Generated class for the PaymentPage page.
  *
@@ -71,7 +71,7 @@ export class PaymentPage {
     this.db.collection("payments").doc(this.users).set(this.payments)
     this.navCtrl.push('ConfirmpaymentPage');
 
-  }
+  } 
 
   
 

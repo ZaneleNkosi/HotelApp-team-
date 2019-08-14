@@ -1,12 +1,13 @@
 import { ProfileProvider } from './../../providers/profile/profile';
 import { Component } from '@angular/core';
-import { Alert, AlertController, IonicPage, NavController, NavParams } from "ionic-angular"; 
+import { Alert, AlertController, IonicPage, NavController, NavParams, LoadingController } from "ionic-angular"; 
 import { AuthProvider } from "../../providers/auth/auth"; 
 import * as firebase from 'firebase';
 import { Profile } from '../../model/profile';
 import { InformationProvider } from '../../providers/information/information';
 import { ProfilePage } from '../profile/profile';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+
 
 /**
  * Generated class for the EditPage page.
@@ -41,6 +42,7 @@ export class EditPage {
     public profileProvider: ProfileProvider ,
     private infoProv: InformationProvider,
     public camera: Camera,
+    public loadingCtrl: LoadingController,
     ) {
       
     }
@@ -73,12 +75,36 @@ async selectImage() {
 }
 
 UpdatePro(userprofile){
+  let users = this.db.collection('User Profiles');
+
+  let load = this.loadingCtrl.create({
+    content: 'Loading'
+  });
+
+  load.present();
+    const images = this.storage.child(this.profile.bio + '.jpg')
+    let upload = images.putString(this.profileImage, 'data_url');
+
+    upload.on('state_changed', snapshot => {
+      let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      console.log('popover2 Picture',progress);
+
+    }, err => {
+
+    }, () => {
+      upload.snapshot.ref.getDownloadURL().then(downURL => {
+        console.log('File available at: ', downURL);
+        this.profile.image = downURL
+
 console.log(userprofile);
   this.db.collection("User Profiles").doc(this.authProvider.getuser()).update(userprofile).then((ref) => {
-   
+    load.dismiss();
     console.log("This is the ref =",ref)
 
   this.navCtrl.push(ProfilePage)
-})}
+});
+})
 
+    })
+  }
 }
