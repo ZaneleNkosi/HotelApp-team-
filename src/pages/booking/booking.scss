@@ -16,12 +16,12 @@ page-booking {
       color: rgb(170, 135, 60);
       text-align: center;
       font-family: 'Dosis';
-      font-size: 40px;
+      font-size: 45px;
     }
     img{
       padding: 30px auto;
-      width: 100px;
-      height: 100px;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
     }
   }
@@ -55,11 +55,18 @@ page-booking {
   .btn {
     position: relative;
     left: 10%;
+    // background: black;
+    // width: 80%;
+   
   }
 
   .button {
+    // position: relative;
+    // left: 10%;
     margin: 10px 0px;
     width: 80%;
+    text-align: center;
+   
   }
 
 }
