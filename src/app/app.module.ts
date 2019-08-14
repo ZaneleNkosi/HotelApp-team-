@@ -1,8 +1,7 @@
 import { EditPage } from './../pages/edit/edit';
 import { ResetComponent } from './../components/reset/reset';
 import { ResetpasswordPage } from './../pages/resetpassword/resetpassword';
-import { RegisterPage } from './../pages/register/register';
-import { LoginPage } from './../pages/login/login';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -38,8 +37,6 @@ import { ProfileProvider } from '../providers/profile/profile';
     BookingPage,
     PaymentPage,
     ResetpasswordPage,
-    RegisterPage,
-    LoginPage,
     EditPage,
     PopoverComponent,
     Popover3Component,

@@ -1,3 +1,77 @@
 page-register {
-
+    .content {
+        background: linear-gradient(rgba(27, 27, 27, 0.767)), url('../../assets/imgs/pop.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+    
+      }
+    
+      .container {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-content: center;
+        position: relative;
+        top: 20%;
+      }
+    
+      .image {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    
+        h1 {
+          font-size: 50px;
+        }
+    
+        p {
+          text-align: center;
+        }
+      }
+    
+      .npts {
+        align-items: center;
+    
+        .item {
+          background: transparent;
+          color: white;
+        }
+        .label{
+            color: white;
+        }
+      }
+    
+      .btn {
+        opacity: 1;
+        position: relative;
+        left: 10%;
+        top: 150px;
+    
+        button {
+    
+          background: rgba(0, 0, 0, 0.411);
+          color: white;
+          width: 80%;
+          align-items: center;
+        }
+    
+        p {
+          position: relative;
+          right: 10%;
+          text-align: center;
+        }
+      }
+    
+      .close{
+        position: absolute;
+        top: -30%;
+        left: -10%;
+        .button{
+            font-size: 30px;
+            color: white;
+        }
+      }
 }
