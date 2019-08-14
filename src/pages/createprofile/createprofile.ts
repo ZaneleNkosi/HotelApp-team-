@@ -25,7 +25,14 @@ export class CreateprofilePage {
   profileImage: string;
   users
 
-  constructor(public loadingCtrl: LoadingController, private infoProvider: InformationProvider, public popoverCtrl: PopoverController, private afDatabase: AngularFireDatabase, public navCtrl: NavController, public navParams: NavParams, public camera: Camera) {
+  constructor(
+    public loadingCtrl: LoadingController, 
+    private infoProvider: InformationProvider, 
+    public popoverCtrl: PopoverController, 
+    private afDatabase: AngularFireDatabase, 
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public camera: Camera) {
   }
 
   ionViewDidLoad() {
