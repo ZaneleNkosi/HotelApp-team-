@@ -1,3 +1,17 @@
 reset {
 
+.container{
+    background-image: url('../../assets/imgs/Uzurihotel.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.middle{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    height: 50%;
+    
+}
 }

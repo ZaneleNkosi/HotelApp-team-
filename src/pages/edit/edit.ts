@@ -39,10 +39,10 @@ export class EditPage {
     public alertCtrl: AlertController, 
     public authProvider: AuthProvider, 
     public profileProvider: ProfileProvider ,
-    private infoProv: InformationProvider,
-    public camera: Camera,
-    public loadingCtrl: LoadingController,
-    ) {}
+    private infoProv: InformationProvider
+    ) {
+      
+    }
 
   ionViewDidLoad() {
     this.db.collection('User Profiles').where('uid', '==', this.infoProv.returnUser().uid).get().then(snapshot => {
