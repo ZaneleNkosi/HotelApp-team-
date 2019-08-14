@@ -20,13 +20,13 @@ export class HomePage {
     this.slider.slideTo(index);
   }
 
-//  gotoLogin(){
-//    this.navCtrl.push('LoginPage');
-//  }
+ gotoLogin(){
+   this.navCtrl.push('LoginPage');
+ }
 
-//  gotoRegister(){
-//   this.navCtrl.push('RegisterPage');
-//  }
+ gotoRegister(){
+  this.navCtrl.push('RegisterPage');
+ }
 
  async presentPopover(myEvent) {
   const popover = await this.popoverCtrl.create(Popover3Component);

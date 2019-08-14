@@ -126,8 +126,6 @@ export class BookingPage {
         console.log('Got data', querySnapshot);
         querySnapshot.forEach(doc => {
           
-
-
           console.log('Profile Document: ', this.displayProfile)
         })
       } else {

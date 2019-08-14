@@ -1,3 +1,88 @@
 page-login {
+  .content {
+    background: linear-gradient(rgba(27, 27, 27, 0.767)), url('../../assets/imgs/pop.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
 
+  }
+
+  .container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    top: 20%;
+  }
+
+  .icon {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      font-size: 50px;
+    }
+
+    p {
+      text-align: center;
+    }
+  }
+
+  .npts {
+    align-items: center;
+
+    .item {
+      background: transparent;
+      color: white;
+    }
+
+    .label{
+        color: white;
+    }
+  }
+
+  .btn {
+    opacity: 1;
+    position: relative;
+    left: 10%;
+    top: 15px;
+   
+
+    button {
+
+      background: black;
+      color: white;
+      width: 80%;
+      align-items: center;
+
+      #login{
+        color: white;
+    }
+    }
+
+    p {
+      position: relative;
+      right: 10%;
+      text-align: center;
+    }
+  }
+
+  .close{
+    position: absolute;
+    top: -40%;
+    left: -10%;
+    .button{
+        font-size: 20px;
+        color: white;
+    }
+  }
+
+  #reset{
+      position: relative;
+      left: 100px;
+  }
 }
