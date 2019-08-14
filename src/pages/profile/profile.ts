@@ -5,6 +5,7 @@ import * as firebase from 'firebase';
 import { ListPage } from '../../pages/list/list';
 import { InformationProvider } from '../../providers/information/information';
 import { PopoverComponent} from '../../components/popover/popover';
+import { EditPage } from '../edit/edit';
 @IonicPage()
 @Component({
   selector: 'page-profile',
@@ -147,7 +148,9 @@ export class ProfilePage {
       load.dismiss();
     });
   }
-
+  profile(){
+    this.navCtrl.push(EditPage);
+  }
 
 }
 

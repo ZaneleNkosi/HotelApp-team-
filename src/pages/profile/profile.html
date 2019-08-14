@@ -1,4 +1,4 @@
-<ion-content>
+<ion-content padding>
 
 
   <div class="container">
@@ -13,6 +13,10 @@
             <div class="back" (click)="gotolist()">
                 <ion-icon name="arrow-back"></ion-icon>
             </div>
+            
+            <button ion-button full color="light" (click)="profile()">
+              Edit Profile
+            </button>
 
             <div class="back1" (click)= "presentPopover(myEvent)">
                 <ion-icon ios="ios-create" md="md-create"></ion-icon>
