@@ -107,4 +107,8 @@ console.log(userprofile);
 
     })
   }
+
+  cancel(){
+    this.navCtrl.push(ProfilePage);
+  }
 }
