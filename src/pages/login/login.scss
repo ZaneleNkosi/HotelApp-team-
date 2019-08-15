@@ -1,10 +1,10 @@
 page-login {
   .content {
-    background: linear-gradient(rgba(27, 27, 27, 0.767)), url('../../assets/imgs/pop.jpg');
+    background: linear-gradient(rgba(27, 27, 27, 0.185)), url('../../assets/imgs/loginback.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    color: white;
+    color: black;
 
   }
 
@@ -37,11 +37,14 @@ page-login {
 
     .item {
       background: transparent;
-      color: white;
+      color: black;
+      .input{
+        border-bottom: 1px solid black;
+    }
     }
 
     .label{
-        color: white;
+        color: black;
     }
   }
 

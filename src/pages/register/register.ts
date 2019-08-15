@@ -50,8 +50,6 @@ export class RegisterPage {
   async register(user: User) {
     if(this.signupForm.valid) {
        this.fireAuth.auth.createUserWithEmailAndPassword(this.signupForm.get('email').value, this.signupForm.get('password').value).then((info) => {
-         
-        this.close()
         this.navCtrl.push('CreateprofilePage');
       
     }).catch((error) => {
@@ -75,14 +73,5 @@ export class RegisterPage {
   gotoLogin(){
     this.navCtrl.push('LoginPage')
   }
-
-  presentPopover3(myEvent) {
-    this.viewCtrl.dismiss();
-    const popover = this.popoverCtrl.create(Popover3Component);
-    popover.present({
-      ev: myEvent 
-    });
-  }
-
 
 }
