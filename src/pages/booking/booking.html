@@ -52,7 +52,9 @@
         type="date" 
         [class.invalid]="!bookingForm.controls.date1.valid && blur"
         [(ngModel)]="bookings.date1"
-        [formControl]="bookingForm.controls['date1']"></ion-input>
+        [formControl]="bookingForm.controls['date1']"
+        min="2019-08-15"
+        max="2020-08-15"></ion-input>
       </ion-item>
 
 
