@@ -83,13 +83,13 @@ page-profile {
 
       .back1 {
         position: absolute;
-        left: 80px;
+        left: 70px;
         top: 40px;
         border: 3px solid white;
         border-radius: 50%;
         text-align: center;
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
 
         .icon {
           width: 100%;
@@ -97,8 +97,9 @@ page-profile {
           object-fit: cover;
           padding: 5px;
           color: white;
-          font-size: 25px;
-          background: rgba(170, 135, 60, 0.712);
+          font-size: 28px;
+          text-align: center;
+          background: rgba(170, 135, 60, 0.774);
           border-radius: 50%;
         }
       }
