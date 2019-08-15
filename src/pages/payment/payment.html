@@ -26,7 +26,7 @@
       </ion-item>
 
       <ion-item class="error-message" 
-        *ngIf="!credentialsForm.controls.name.valid && credentialsForm.controls.name.touched"> 
+        *ngIf="!credentialsForm.controls.name.valid && credentialsForm.controls.name.dirty"> 
         <p>Please enter name on card.</p> 
       </ion-item>
 
@@ -39,7 +39,7 @@
       </ion-item>
 
       <ion-item class="error-message" 
-        *ngIf="!credentialsForm.controls.account.valid && credentialsForm.controls.account.touched"> 
+        *ngIf="!credentialsForm.controls.account.valid && credentialsForm.controls.account.dirty"> 
         <p>Please enter 16 digit Card Number.</p> 
       </ion-item>
 
@@ -47,7 +47,9 @@
         <ion-item>
           <ion-label stacked>Expiry Date</ion-label>
           <ion-datetime displayFormat="MM/YYYY"
-          type="text" 
+          min="2019-01"
+          max="2030-08"
+          type="date" 
           [formControl]="credentialsForm.controls['expiry']"
           [(ngModel)]="payments.expiry"></ion-datetime>
         </ion-item>
