@@ -2,12 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { ListPage } from '../list/list';
 
-/**
- * Generated class for the ConfirmpaymentPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -31,6 +25,6 @@ export class ConfirmpaymentPage {
     }
   
   gotolist(){
-    this.navCtrl.push(ListPage);
+    this.navCtrl.setRoot(ListPage);
   }
 }

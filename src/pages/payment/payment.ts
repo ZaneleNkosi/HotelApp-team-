@@ -70,7 +70,7 @@ export class PaymentPage {
     // myModal.present();
 
     this.db.collection("payments").doc(this.users).set(this.payments)
-    this.navCtrl.push(ConfirmpaymentPage);
+    this.navCtrl.push('ConfirmpaymentPage');
 
   } 
 

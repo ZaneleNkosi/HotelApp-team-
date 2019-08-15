@@ -12,6 +12,7 @@ page-booking {
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    padding: 10px 10px;
     p {
       color: rgb(170, 135, 60);
       text-align: center;
@@ -23,6 +24,7 @@ page-booking {
       width: 200px;
       height: 200px;
       border-radius: 50%;
+      opacity: 0.6;
     }
   }
 
