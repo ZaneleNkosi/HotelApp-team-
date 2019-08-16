@@ -43,10 +43,9 @@ export class RegisterPage {
   async register(user: User) {
     if(this.signupForm.valid) {
        this.fireAuth.auth.createUserWithEmailAndPassword(this.signupForm.get('email').value, this.signupForm.get('password').value).then((info) => {
-        this.navCtrl.setRoot(CreateprofilePage);
+        this.navCtrl.push(CreateprofilePage);
     }).catch((error) => {
       console.log('error: ',error);
-      
     })
       
     }else {
@@ -56,6 +55,7 @@ export class RegisterPage {
         cssClass: "error"
       }).present();
     }
+    // this.navCtrl.setRoot(CreateprofilePage);
   }
 
   close() {

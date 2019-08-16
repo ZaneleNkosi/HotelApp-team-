@@ -27,7 +27,6 @@ export class CreateprofilePage {
     public loadingCtrl: LoadingController, 
     private infoProvider: InformationProvider, 
     public popoverCtrl: PopoverController, 
-    private afDatabase: AngularFireDatabase, 
     public navCtrl: NavController, 
     public navParams: NavParams, 
     public camera: Camera) {
@@ -41,6 +40,7 @@ export class CreateprofilePage {
         this.profile.uid = this.infoProvider.user.uid;
         console.log('profile popover2',  this.infoProvider.user)
       })
+      return
   }
 
   async selectImage() {
@@ -71,7 +71,7 @@ export class CreateprofilePage {
 
     upload.on('state_changed', snapshot => {
       let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      console.log('popover2 Picture',progress);
+      console.log('create profile',progress);
 
     }, err => {
 
