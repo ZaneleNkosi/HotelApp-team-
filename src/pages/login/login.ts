@@ -90,13 +90,7 @@ close() {
  this.viewCtrl.dismiss();
 }
 
-presentReset(myEvent) {
- this.viewCtrl.dismiss();
- const popover = this.popoverCtrl.create(ResetComponent);
- popover.present({
-   ev: myEvent 
- });
-}
+
 
 loginUser(): void { 
  if (!this.loginForm.valid) { 

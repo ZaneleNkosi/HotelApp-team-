@@ -7,8 +7,6 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { InformationProvider } from '../../providers/information/information';
 import { ListPage } from '../list/list';
 
-
-
 @IonicPage()
 @Component({
   selector: 'page-createprofile',
@@ -16,7 +14,6 @@ import { ListPage } from '../list/list';
 })
 export class CreateprofilePage {
 
-  
   db = firebase.firestore();
   storage = firebase.storage().ref();
   profile = {} as Profile;
@@ -86,7 +83,6 @@ export class CreateprofilePage {
         this.db.collection("User Profiles").doc(this.users).set(this.profile).then(() => {
           load.dismiss();
           this.navCtrl.push(ListPage);
-         
         });
       })
     })

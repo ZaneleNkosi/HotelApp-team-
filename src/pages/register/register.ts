@@ -1,18 +1,11 @@
-
 import { Component } from '@angular/core';
 import { User } from '../../model/user';
-import {  IonicPage, NavController, NavParams, ToastController, ViewController, PopoverController, LoadingController, AlertController, Loading  } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, ViewController, PopoverController, LoadingController, AlertController, Loading  } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { Popover3Component} from '../../components/popover3/popover3';
 import { AuthProvider } from '../../providers/auth/auth';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { EmailValidator } from '../../Validators/email';
-/**
- * Generated class for the RegisterPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { CreateprofilePage } from '../createprofile/createprofile';
 
 @IonicPage()
 @Component({
@@ -37,9 +30,9 @@ export class RegisterPage {
 
       this.signupForm = formBuilder.group({ 
         email: [ "", 
-        Validators.compose([Validators.required, EmailValidator.isValid]) ], 
+        Validators.compose([Validators.required, EmailValidator.isValid])], 
         password: [ "", 
-        Validators.compose([Validators.minLength(6), Validators.required]) ] 
+        Validators.compose([Validators.minLength(6), Validators.required])] 
       });
   }
 
@@ -50,8 +43,7 @@ export class RegisterPage {
   async register(user: User) {
     if(this.signupForm.valid) {
        this.fireAuth.auth.createUserWithEmailAndPassword(this.signupForm.get('email').value, this.signupForm.get('password').value).then((info) => {
-        this.navCtrl.push('CreateprofilePage');
-      
+        this.navCtrl.setRoot(CreateprofilePage);
     }).catch((error) => {
       console.log('error: ',error);
       

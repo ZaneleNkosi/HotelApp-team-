@@ -26,6 +26,7 @@ import { Camera } from "@ionic-native/camera";
 import { AuthProvider } from '../providers/auth/auth';
 import { ProfileProvider } from '../providers/profile/profile';
 import { ListPage } from '../pages/list/list';
+import { CreateprofilePage } from '../pages/createprofile/createprofile';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { ListPage } from '../pages/list/list';
     HomePage,
     BookingPage,
     PaymentPage,
-  
+    CreateprofilePage,
     EditPage,
     ListPage ,
     PopoverComponent,
@@ -60,6 +61,7 @@ import { ListPage } from '../pages/list/list';
     BookingPage,
     PaymentPage,
     EditPage,
+    CreateprofilePage,
     ListPage, 
     PopoverComponent,
     Popover3Component,
